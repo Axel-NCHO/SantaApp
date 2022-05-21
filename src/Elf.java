@@ -1,6 +1,3 @@
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 public abstract class Elf extends User{
 
     private EmploymentStatus status;

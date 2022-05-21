@@ -1,5 +1,4 @@
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Order implements Serializable {
@@ -39,6 +38,10 @@ public class Order implements Serializable {
     public Child getOwner() {
         return this.owner;
     }
+
+    public OrderState getState(){
+        return this.state;
+    } 
 
     public void setOwner (Child child){
         this.owner = child;
