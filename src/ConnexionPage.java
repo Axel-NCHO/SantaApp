@@ -23,7 +23,7 @@ public class ConnexionPage extends JFrame implements UiFinals {
 
     private JPanel createPersonalInformationsPanel(){
         JPanel personalInformationsPanel = new JPanel();
-        personalInformationsPanel.setBackground(Color.WHITE);
+        personalInformationsPanel.setBackground(UI_BG_COLOR);
         personalInformationsPanel.setLayout(new GridLayout(1, 2));
         configEmailPanel();
         personalInformationsPanel.add(this.emailPanel);
@@ -36,7 +36,7 @@ public class ConnexionPage extends JFrame implements UiFinals {
     private void configEmailPanel(){
         this.emailPanel = new JPanel();
         this.emailPanel.setBorder(new EmptyBorder(200, 60, 250, 60));
-        this.emailPanel.setBackground(Color.WHITE);
+        this.emailPanel.setBackground(UI_BG_COLOR);
         this.emailPanel.setLayout(new BoxLayout(this.emailPanel, BoxLayout.Y_AXIS));
         this.emailPanel.add(new JLabel("Connectes-toi à ton compte !"));
         this.emailPanel.add(new JLabel("Email :"));
@@ -47,7 +47,7 @@ public class ConnexionPage extends JFrame implements UiFinals {
     private void configPasswordPanel(){
         this.pwdPanel = new JPanel();
         this.pwdPanel.setBorder(new EmptyBorder(200, 60, 250, 60));
-        this.pwdPanel.setBackground(Color.WHITE);
+        this.pwdPanel.setBackground(UI_BG_COLOR);
         this.pwdPanel.setLayout(new BoxLayout(this.pwdPanel, BoxLayout.Y_AXIS));
         this.pwdPanel.add(new JLabel("Connectes-toi à ton compte !"));
         this.pwdPanel.add(new JLabel("Mot de passe :"));
@@ -59,7 +59,7 @@ public class ConnexionPage extends JFrame implements UiFinals {
         JPanel buttonsPanel = new JPanel();
         buttonsPanel.setBorder(new EmptyBorder(10, 60, 80, 60));
         //submitButtonPanel.setBounds(0, 100, 100, 50);
-        buttonsPanel.setBackground(Color.WHITE);
+        buttonsPanel.setBackground(UI_BG_COLOR);
         //buttonsPanel.setLayout(new BorderLayout());
         this.connexionButton.setText("Je me connecte !");
         this.registrationButton.setText("Je crée un compte !");

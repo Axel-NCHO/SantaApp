@@ -28,7 +28,7 @@ public class RegistrationPage extends JFrame implements UiFinals {
 
     private JPanel createPersonalInformationsPanel(){
         JPanel personalInformationsPanel = new JPanel();
-        personalInformationsPanel.setBackground(Color.WHITE);
+        personalInformationsPanel.setBackground(UI_BG_COLOR);
         personalInformationsPanel.setLayout(new GridLayout(1, 2));
         configNameAndEmailPanel();
         personalInformationsPanel.add(this.nameEmailAndBirthPanel);
@@ -41,7 +41,7 @@ public class RegistrationPage extends JFrame implements UiFinals {
     private void configNameAndEmailPanel(){
         this.nameEmailAndBirthPanel = new JPanel();
         this.nameEmailAndBirthPanel.setBorder(new EmptyBorder(150, 60, 130, 60));
-        this.nameEmailAndBirthPanel.setBackground(Color.WHITE);
+        this.nameEmailAndBirthPanel.setBackground(UI_BG_COLOR);
         this.nameEmailAndBirthPanel.setLayout(new BoxLayout(this.nameEmailAndBirthPanel, BoxLayout.Y_AXIS));
         this.nameEmailAndBirthPanel.add(new JLabel("Crée ton compte !"));
         this.nameEmailAndBirthPanel.add(new JLabel("Nom :"));
@@ -59,7 +59,7 @@ public class RegistrationPage extends JFrame implements UiFinals {
     private void configAgeAndPasswordPanel(){
         this.agePwdAndAddressPanel = new JPanel();
         this.agePwdAndAddressPanel.setBorder(new EmptyBorder(150, 60, 130, 60));
-        this.agePwdAndAddressPanel.setBackground(Color.WHITE);
+        this.agePwdAndAddressPanel.setBackground(UI_BG_COLOR);
         this.agePwdAndAddressPanel.setLayout(new BoxLayout(this.agePwdAndAddressPanel, BoxLayout.Y_AXIS));
         this.agePwdAndAddressPanel.add(new JLabel("Crée ton compte !"));
         this.agePwdAndAddressPanel.add(new JLabel("Age :"));
@@ -77,7 +77,7 @@ public class RegistrationPage extends JFrame implements UiFinals {
         JPanel submitButtonPanel = new JPanel();
         submitButtonPanel.setBorder(new EmptyBorder(10, 60, 10, 60));
         //submitButtonPanel.setBounds(0, 100, 100, 50);
-        submitButtonPanel.setBackground(Color.WHITE);
+        submitButtonPanel.setBackground(UI_BG_COLOR);
         //submitButtonPanel.setLayout(new BorderLayout());
         this.submitButton.setText("Submit");
         submitButtonPanel.add(this.submitButton/*, BorderLayout.NORTH*/);

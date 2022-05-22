@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Order implements Serializable {
 
-    private final Integer MAX_NB_TOYS = 5;
+    public final Integer MAX_NB_TOYS = 5;
     private Integer nbToysInOrder = 0;
 
     private Child owner;

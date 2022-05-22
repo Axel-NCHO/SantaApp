@@ -3,7 +3,7 @@ public class Test {
 
     public static void main(String[] args){
 
-        ConnexionPage page = new ConnexionPage();
+        NewChildHomePage page = new NewChildHomePage();
         page.run();
     }
 }

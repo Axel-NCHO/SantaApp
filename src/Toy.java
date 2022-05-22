@@ -20,6 +20,7 @@ public class Toy implements Serializable {
         return this.minimalAge;
     }
 
+    @Override
     public boolean equals(Object obj){
         if(obj == null){return false;}
         if(obj == this){return true;}
@@ -27,5 +28,9 @@ public class Toy implements Serializable {
         Toy toy = (Toy)obj;
         return toy.getName() == this.getName();
 
+    }
+    @Override
+    public String toString(){
+        return this.getName();
     }
 }
