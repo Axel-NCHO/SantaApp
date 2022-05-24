@@ -1,7 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyListener;
 
-public abstract class UIPage extends JFrame implements UiFinals {
+public abstract class UIPage extends JFrame implements UiFinals, KeyListener {
 
     public UIPage (String title){
         this.setTitle(APP_NAME + " - v" + APP_VERSION + " - " + title);

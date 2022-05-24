@@ -5,51 +5,31 @@ import java.util.Date;
 
 public class AccountCreationThread extends Thread {
 
-    private UITextField lastName;
-    private UITextField firstName;
-    private UITextField email;
-    private UITextField age;
-    private UITextField pwd;
-    private UITextField dateOfBirth;
-    private UITextField city ;
-    private UITextField country;
+    private RegistrationPage page;
+    private boolean exitSatus;
 
 
-    public AccountCreationThread(UITextField fname, UITextField lname, UITextField email, UITextField pwd, UITextField dateOfBirth, UITextField age, UITextField city, UITextField country){
-        this.firstName = fname;
-        this.lastName = lname;
-        this.email = email;
-        this.pwd = pwd;
-        this.age = age;
-        this.city = city;
-        this.country = country;
-        this.dateOfBirth = dateOfBirth;
+    public AccountCreationThread(RegistrationPage page) {
+        this.page = page;
     }
 
-    public void run(){
-        Email mail = new Email(email.getText());
-        if(mail.isValid() && firstName.getText() != "" && lastName.getText() != ""){
-            Child newChild = new Child(firstName.getText(), lastName.getText(), mail, pwd.getText(), getDateOfBirth(), getAddress(), (int) (Math.random()*15));
-            //Pop-up
-            System.out.println("Compte créé pour " + email.getText());
+    public void run() {
+        Email mail = new Email(page.getEmail().getText());
+        if (mail.isValid() && page.getFirstName().getText() != "" && page.getLastName().getText() != "") {
+            Child newChild = new Child(page.getFirstName().getText(), page.getLastName().getText(), mail, page.getPassword().getText(), page.getDateOfBirth(), page.getAddress(), (int) (Math.random() * 15));
+            JOptionPane.showMessageDialog(page, "Compte créé avec succès !");
+            System.out.println("Compte créé pour " + page.getEmail().getText());
+            this.exitSatus = true;
         } else {
-            //Pop-up!!!!!!!!!!!!!!
-            System.out.println("Veuillez vérifier vos entrées");
+            this.exitSatus = false;
+            JOptionPane.showMessageDialog(page, "Erreur. Vérifies ta saisie", "Erreur", JOptionPane.ERROR_MESSAGE);
         }
     }
 
-    public Date getDateOfBirth(){
-        if (this.dateOfBirth.getText() != "") {
-            try {
-                return new SimpleDateFormat("yyyy-MM-dd").parse(this.dateOfBirth.getText());
-            } catch (ParseException e) {
-                return null;
-            }
-        }
-        return null;
+    public boolean startThread(){
+        run();
+        return this.exitSatus;
     }
 
-    public String getAddress(){
-        return age.getText() + " " + city.getText() + ", " + country.getText();
-    }
 }
+

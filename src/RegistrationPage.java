@@ -3,6 +3,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -87,30 +88,55 @@ public class RegistrationPage extends UIPage {
         submitButton.setForeground(UI_TEXT_COLOR);
         submitButton.setOpaque(true);
         submitButton.setBorderPainted(false);
-        this.submitButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Try to create new account
-                new AccountCreationThread(firstName, lastName, email, pwd, dateOfBirth, age, city, country).start();
-            }
-        });
+        this.submitButton.addActionListener(new UIActionListener(this));
         submitButtonPanel.add(this.submitButton/*, BorderLayout.NORTH*/);
         return submitButtonPanel;
 
     }
-    /*
-    public String getFirstName() {
-        return this.firstName.getText();
+
+    public UITextField getFirstName() {
+        return this.firstName;
     }
 
-    public String getLastName() {
-        return this.lastName.getText();
+    public UITextField getLastName() {
+        return this.lastName;
     }
 
-    public Email getEmail(){
-        return new Email(this.email.getText());
-    }*/
+    public UITextField getEmail(){
+        return this.email;
+    }
 
+    public UITextField getPassword(){
+        return this.pwd;
+    }
 
+    public Date getDateOfBirth(){
+        if (this.dateOfBirth.getText() != "") {
+            try {
+                return new SimpleDateFormat("yyyy-MM-dd").parse(this.dateOfBirth.getText());
+            } catch (ParseException e) {
+                return null;
+            }
+        }
+        return null;
+    }
 
+    public String getAddress(){
+        return age.getText() + " " + city.getText() + ", " + country.getText();
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
 }

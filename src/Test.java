@@ -23,6 +23,9 @@ public class Test {
             //System.out.println("Utilisateur " + mail.toString() + " inexistant.");
             e.printStackTrace();
         }*/
+        /*
+        RegistrationPage page = new RegistrationPage();
+        page.run();*/
 
         RegistrationPage page = new RegistrationPage();
         page.run();
