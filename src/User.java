@@ -1,4 +1,3 @@
-import java.io.File;
 import java.io.Serializable;
 
 public abstract class User implements Serializable {
@@ -8,7 +7,7 @@ public abstract class User implements Serializable {
     private String password;
 
     public User(String fn, String ln, Email mail, String pw){
-        String[] users = new File("AppDataBase/UsersFiles.santaDB").list();
+        String[] users = FileHelper.fileList("AppDataBase/UsersFiles.santaDB");
         int i = 0;
         while(i < users.length && !users[i].equals(mail.toString())){
             i ++;
@@ -18,14 +17,14 @@ public abstract class User implements Serializable {
             lastName = ln;
             email = mail;
             password = pw;
-            this.save();
         }
-
     }
 
     public User(Email mail){
         email = mail;
     }
+
+    public User(){}
 
     public String getFirstName(){
         return firstName;
@@ -52,7 +51,23 @@ public abstract class User implements Serializable {
     }
 
     public void setEmail(String newEmail){
-        email.setEmail(newEmail);
+        String[] users = FileHelper.fileList("AppDataBase/UsersFiles.santaDB");
+        int i = 0;
+        while(i < users.length && !users[i].equals(newEmail)){
+            i ++;
+        }
+        if(i >= users.length){
+            if(email == null){
+                email = new Email(newEmail);
+            }
+            else{
+                email.setEmail(newEmail);
+            }
+
+        }
+        else{
+            System.out.println("Mail déjà utilisé, veuillez en choisir un autre");;
+        }
     }
 
     public void setPassword(String newPassword){
@@ -66,5 +81,4 @@ public abstract class User implements Serializable {
     public void save(){
         FileHelper.export("AppDataBase/UsersFiles.santaDB/" + email.toString(),this);
     }
-
 }
