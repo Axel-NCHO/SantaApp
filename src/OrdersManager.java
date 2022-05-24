@@ -5,6 +5,7 @@ public class OrdersManager {
     private ArrayList<Order> receivedOrders;
     private ArrayList<Order> validOrders;
     private  ArrayList<Order> preparedOrders;
+    private final String orderPath = "AppDataBase/Orders.santaDB/";
 
     public OrdersManager (){
         receivedOrders = new ArrayList<Order>();
@@ -17,17 +18,17 @@ public class OrdersManager {
             receivedOrders = new ArrayList<Order>();
             validOrders = new ArrayList<Order>();
             preparedOrders = new ArrayList<Order>();
-            String[] Ongoing = new File("AppDataBase/Orders.santaDB/Ongoing/").list();
-            String[] Validated = new File("AppDataBase/Orders.santaDB/Validated/").list();
-            String[] Ready = new File("AppDataBase/Orders.santaDB/Ready/").list();
+            String[] Ongoing = new File(orderPath + "Ongoing/").list();
+            String[] Validated = new File(orderPath + "Validated/").list();
+            String[] Ready = new File(orderPath + "Ready/").list();
             for(int i = 0; i < Ongoing.length; i++){
-                receivedOrders.add((Order) FileHelper.load("AppDataBase/Orders.santaDB/Ongoing/" + Ongoing[i]));
+                receivedOrders.add((Order) FileHelper.load(orderPath + "Ongoing/" + Ongoing[i]));
             }
             for(int i = 0; i < Validated.length; i++){
-                validOrders.add((Order) FileHelper.load("AppDataBase/Orders.santaDB/Validated/" + Validated[i]));
+                validOrders.add((Order) FileHelper.load(orderPath + "Validated/" + Validated[i]));
             }
             for(int i = 0; i < Ready.length; i++){
-                preparedOrders.add((Order) FileHelper.load("AppDataBase/Orders.santaDB/Ready/" + Ready[i]));
+                preparedOrders.add((Order) FileHelper.load(orderPath + "Ready/" + Ready[i]));
             }
         }
     }
@@ -37,7 +38,7 @@ public class OrdersManager {
             order.setState(OrderState.ONGOING);
             receivedOrders.add(order);
             order.getOwner().setHasOrdered(true);
-            FileHelper.export("AppDataBase/Orders.santaDB/Ongoing/" + order.getOwner().getEmail().toString(),order);
+            FileHelper.export(orderPath + "Ongoing/" + order.getOwner().getEmail().toString(),order);
         }
     }
 
@@ -45,16 +46,16 @@ public class OrdersManager {
         order.setState(OrderState.VALIDATED);
         receivedOrders.remove(order);
         validOrders.add(order);
-        FileHelper.remove("AppDataBase/Orders.santaDB/Ongoing/" + order.getOwner().getEmail().toString());
-        FileHelper.export("AppDataBase/Orders.santaDB/Validated/" + order.getOwner().getEmail().toString(),order);
+        FileHelper.remove(orderPath + "Ongoing/" + order.getOwner().getEmail().toString());
+        FileHelper.export(orderPath + "Validated/" + order.getOwner().getEmail().toString(),order);
     }
 
     public void setPrepared (Order order){
         order.setState(OrderState.PREPARED);
         validOrders.remove(order);
         preparedOrders.add(order);
-        FileHelper.remove("AppDataBase/Orders.santaDB/Validated/" + order.getOwner().getEmail().toString());
-        FileHelper.export("AppDataBase/Orders.santaDB/Ready/" + order.getOwner().getEmail().toString(),order);
+        FileHelper.remove(orderPath + "Validated/" + order.getOwner().getEmail().toString());
+        FileHelper.export(orderPath + "Ready/" + order.getOwner().getEmail().toString(),order);
     }
 
     public ArrayList<Order> getReceivedOrders(){
@@ -71,7 +72,7 @@ public class OrdersManager {
 
     public void cancelOrder(Order order){
         receivedOrders.remove(order);
-        FileHelper.remove("AppDataBase/Orders.santaDB/Ready/" + order.getOwner().getEmail().toString());
+        FileHelper.remove(orderPath + "Ready/" + order.getOwner().getEmail().toString());
     }
 
     public void removeToy(Order order, Toy toy){

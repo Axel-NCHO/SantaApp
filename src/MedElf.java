@@ -4,6 +4,7 @@ public class MedElf extends Elf {
 
     public MedElf (String fName, String lName, Email email, String pwd, EmploymentStatus status){
         super(fName, lName, email, pwd, status);
+        this.save();
     }
 
     public MedElf (Email mail){
@@ -14,6 +15,10 @@ public class MedElf extends Elf {
         super.setPassword(loadedElf.getPassword());
         super.setEmploymentStatus(loadedElf.getStatus());
         this.reinderCare = loadedElf.getReinderCare();
+    }
+
+    public MedElf(){
+        super();
     }
 
     public void setReinderCare(ReinderCare reinderCare) {

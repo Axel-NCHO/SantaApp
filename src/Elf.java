@@ -11,6 +11,10 @@ public abstract class Elf extends User{
         super(mail);
     }
 
+    public Elf(){
+        super();
+    }
+
     public EmploymentStatus getStatus(){
         return status;
     }

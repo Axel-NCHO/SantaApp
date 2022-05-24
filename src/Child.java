@@ -13,7 +13,7 @@ public class Child extends User {
         this.dateOfBirth = birthDate;
         this.address = addr;
         this.minimalAgeToys = minAgeToys;
-        FileHelper.export("AppDataBase/UsersFiles.santaDB/" + super.getEmail().toString(),this);
+        this.save();
     }
 
     public Child (Email mail){
@@ -27,6 +27,8 @@ public class Child extends User {
         this.minimalAgeToys = loadedChild.getMinimalAgeToys();
         this.hasOrdered = loadedChild.getHasOrdered();
     }
+
+    
 
     public Date getDateOfBirth (){
         return this.dateOfBirth;
