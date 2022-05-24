@@ -1,29 +1,31 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class RegistrationPage extends JFrame implements UiFinals {
+public class RegistrationPage extends UIPage {
 
-    private JTextField lastName = new JTextField();
-    private JTextField firstName = new JTextField();
-    private JTextField email = new JTextField();
-    private JTextField age = new JTextField();
-    private JPasswordField pwd = new JPasswordField();
-    private JTextField dateOfBirth = new JTextField();
-    private JTextField city = new JTextField();
-    private JTextField country = new JTextField();
+    private UITextField lastName = new UITextField();
+    private UITextField firstName = new UITextField();
+    private UITextField email = new UITextField();
+    private UITextField age = new UITextField();
+    private UITextField pwd = new UITextField();
+    private UITextField dateOfBirth = new UITextField();
+    private UITextField city = new UITextField();
+    private UITextField country = new UITextField();
     private JPanel nameEmailAndBirthPanel;
     private JPanel agePwdAndAddressPanel;
     private JButton submitButton = new JButton();
 
     public RegistrationPage(){
-        this.setTitle(APP_NAME + " - v" + APP_VERSION + " - Création d'un nouveau compte");
-        this.setSize(new Dimension(1200, 700));
-        this.setResizable(false);
+        super("Crée ton compte !");
         this.getContentPane().setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
         this.getContentPane().add(createPersonalInformationsPanel());
         this.getContentPane().add(createSubmitButtonPanel());
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     private JPanel createPersonalInformationsPanel(){
@@ -43,14 +45,15 @@ public class RegistrationPage extends JFrame implements UiFinals {
         this.nameEmailAndBirthPanel.setBorder(new EmptyBorder(150, 60, 130, 60));
         this.nameEmailAndBirthPanel.setBackground(UI_BG_COLOR);
         this.nameEmailAndBirthPanel.setLayout(new BoxLayout(this.nameEmailAndBirthPanel, BoxLayout.Y_AXIS));
-        this.nameEmailAndBirthPanel.add(new JLabel("Crée ton compte !"));
-        this.nameEmailAndBirthPanel.add(new JLabel("Nom :"));
+        this.nameEmailAndBirthPanel.add(new UILabel("Crée ton compte !"));
+        this.nameEmailAndBirthPanel.add(new UILabel("Nom :"));
         this.nameEmailAndBirthPanel.add(this.firstName);
-        this.nameEmailAndBirthPanel.add(new JLabel("Prénom :"));
+        this.nameEmailAndBirthPanel.add(new UILabel("Prénom :"));
         this.nameEmailAndBirthPanel.add(this.lastName);
-        this.nameEmailAndBirthPanel.add(new JLabel("Adresse mail : "));
+        this.nameEmailAndBirthPanel.add(new UILabel("Adresse mail : "));
         this.nameEmailAndBirthPanel.add(this.email);
-        this.nameEmailAndBirthPanel.add(new JLabel("Date de naissance : "));
+        this.nameEmailAndBirthPanel.add(new UILabel("Date de naissance : "));
+        this.dateOfBirth.setText("yyyy-MM-dd");
         this.nameEmailAndBirthPanel.add(this.dateOfBirth);
 
     }
@@ -61,14 +64,14 @@ public class RegistrationPage extends JFrame implements UiFinals {
         this.agePwdAndAddressPanel.setBorder(new EmptyBorder(150, 60, 130, 60));
         this.agePwdAndAddressPanel.setBackground(UI_BG_COLOR);
         this.agePwdAndAddressPanel.setLayout(new BoxLayout(this.agePwdAndAddressPanel, BoxLayout.Y_AXIS));
-        this.agePwdAndAddressPanel.add(new JLabel("Crée ton compte !"));
-        this.agePwdAndAddressPanel.add(new JLabel("Age :"));
+        this.agePwdAndAddressPanel.add(new UILabel("Crée ton compte !"));
+        this.agePwdAndAddressPanel.add(new UILabel("Rue :"));
         this.agePwdAndAddressPanel.add(this.age);
-        this.agePwdAndAddressPanel.add(new JLabel("Ville :"));
+        this.agePwdAndAddressPanel.add(new UILabel("Ville :"));
         this.agePwdAndAddressPanel.add(this.city);
-        this.agePwdAndAddressPanel.add(new JLabel("Pays :"));
+        this.agePwdAndAddressPanel.add(new UILabel("Pays :"));
         this.agePwdAndAddressPanel.add(this.country);
-        this.agePwdAndAddressPanel.add(new JLabel("Nouveau mot de passe :"));
+        this.agePwdAndAddressPanel.add(new UILabel("Nouveau mot de passe :"));
         this.agePwdAndAddressPanel.add(this.pwd);
 
     }
@@ -80,13 +83,34 @@ public class RegistrationPage extends JFrame implements UiFinals {
         submitButtonPanel.setBackground(UI_BG_COLOR);
         //submitButtonPanel.setLayout(new BorderLayout());
         this.submitButton.setText("Submit");
+        submitButton.setBackground(UI_BG_COLOR_2);
+        submitButton.setForeground(UI_TEXT_COLOR);
+        submitButton.setOpaque(true);
+        submitButton.setBorderPainted(false);
+        this.submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //Try to create new account
+                new AccountCreationThread(firstName, lastName, email, pwd, dateOfBirth, age, city, country).start();
+            }
+        });
         submitButtonPanel.add(this.submitButton/*, BorderLayout.NORTH*/);
         return submitButtonPanel;
 
     }
-
-    public void run(){
-        this.setVisible(true);
+    /*
+    public String getFirstName() {
+        return this.firstName.getText();
     }
+
+    public String getLastName() {
+        return this.lastName.getText();
+    }
+
+    public Email getEmail(){
+        return new Email(this.email.getText());
+    }*/
+
+
 
 }

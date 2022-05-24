@@ -25,7 +25,7 @@ public abstract class Elf extends User{
         if (obj == this){return true;}
         if (!(obj instanceof Elf)){return false;}
 
-        Child child = (Child)obj;
-        return this.getEmail() == child.getEmail();
+        Elf elf = (Elf)obj;
+        return this.getEmail() == elf.getEmail();
     }
 }

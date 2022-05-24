@@ -2,23 +2,20 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-public class ConnexionPage extends JFrame implements UiFinals {
+public class ConnexionPage extends UIPage {
 
-    private JTextField email = new JTextField();
-    private JPasswordField pwd = new JPasswordField();
+    private UITextField email = new UITextField();
+    private UITextField pwd = new UITextField();
     private JButton connexionButton = new JButton();
     private JButton registrationButton = new JButton();
     private JPanel emailPanel;
     private JPanel pwdPanel;
 
     public ConnexionPage(){
-        this.setTitle(APP_NAME + " - v" + APP_VERSION + " - Connexion");
-        this.setSize(new Dimension(1200, 700));
-        this.setResizable(false);
+        super("Connexion");
         this.getContentPane().setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
         this.getContentPane().add(createPersonalInformationsPanel());
         this.getContentPane().add(createButtonsPanel());
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     private JPanel createPersonalInformationsPanel(){
@@ -38,8 +35,8 @@ public class ConnexionPage extends JFrame implements UiFinals {
         this.emailPanel.setBorder(new EmptyBorder(200, 60, 250, 60));
         this.emailPanel.setBackground(UI_BG_COLOR);
         this.emailPanel.setLayout(new BoxLayout(this.emailPanel, BoxLayout.Y_AXIS));
-        this.emailPanel.add(new JLabel("Connectes-toi à ton compte !"));
-        this.emailPanel.add(new JLabel("Email :"));
+        this.emailPanel.add(new UILabel("Connectes-toi à ton compte !"));
+        this.emailPanel.add(new UILabel("Email :"));
         this.emailPanel.add(this.email);
 
     }
@@ -49,8 +46,8 @@ public class ConnexionPage extends JFrame implements UiFinals {
         this.pwdPanel.setBorder(new EmptyBorder(200, 60, 250, 60));
         this.pwdPanel.setBackground(UI_BG_COLOR);
         this.pwdPanel.setLayout(new BoxLayout(this.pwdPanel, BoxLayout.Y_AXIS));
-        this.pwdPanel.add(new JLabel("Connectes-toi à ton compte !"));
-        this.pwdPanel.add(new JLabel("Mot de passe :"));
+        this.pwdPanel.add(new UILabel("Connectes-toi à ton compte !"));
+        this.pwdPanel.add(new UILabel("Mot de passe :"));
         this.pwdPanel.add(this.pwd);
 
     }
@@ -64,7 +61,7 @@ public class ConnexionPage extends JFrame implements UiFinals {
         this.connexionButton.setText("Je me connecte !");
         this.registrationButton.setText("Je crée un compte !");
         buttonsPanel.add(this.connexionButton);
-        buttonsPanel.add(new JLabel("     Nouveau ici ? >>>>>>> "));
+        buttonsPanel.add(new UILabel("     Nouveau ici ? >>>>>>> "));
         buttonsPanel.add(this.registrationButton);
         return buttonsPanel;
         /*
@@ -85,10 +82,6 @@ public class ConnexionPage extends JFrame implements UiFinals {
         buttonsPanel.add(new JLabel("------- Nouveau ici ? ---------"));
         buttonsPanel.add(this.registrationButton);
         return buttonsPanel;*/
-    }
-
-    public void run(){
-        this.setVisible(true);
     }
 
 }
