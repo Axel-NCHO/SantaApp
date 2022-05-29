@@ -2,17 +2,140 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84afeec7-9556-42db-95a6-7bc41606407a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projet_Java.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Album La Ferme avec images et sons" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Album mon imagier de la ferme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Bavoir Yoda Star Wars" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Coffret Doudou et Compagnie" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Coffret de jouet Tut Tut Animo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Doudou tout doux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Jeu éducatif maman et ses petits" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Jouet en bois J’apprends À Compter Les Légumes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/La balle colorée" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Le livre des odeurs et des couleurs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Le livre enchanté interactif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Le loup qui voulait faire le tour du monde" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Le maxi garage éducatif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Le super cube des découvertes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Ma voiture Formes et Couleurs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Mega Blocks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Mon Hibou Lumineux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Mon premier livre de coloriage" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Nounours Pikatchu" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/0-3/Tut Tut bolide" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Affiche personnalisée pour fan de Foot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Akaso Pro - Caméra sport" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Aomais - enceinte Bluetooth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Batterie USB Gold à personnaliser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Casque gaming HyperX Cloud II" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Drone Parrot Anafi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Ecouteurs sport AfterShokz Aeropex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Ibanez - Guitare acoustique" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/LEGO Architecture Paris" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Le ballon de foot lumineux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Livre Je crée mes bandes dessinées" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Mini pouf pour smartphone" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Monopoly Fortnite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Nintendo Switch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Plante carnivore à faire pousser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Poster Michael Jordan qui dunk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Skateboard Newdora avec roues lumineuses" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Super Mario Odyssey" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/12-15/Tablette Fire HD 8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Boucle d'oreille personnalisée au prénom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Bracelet à message" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Cafetière à piston" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Casque Bose SoundLink II" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Casque de réalité virtuelle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Chaussons en peluche" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Colier Coralie" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/DETROIT - Sac à dos vintage" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Diffuseur d'huiles essentielles" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Drone Xiaomi FIMI X8 SE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Enceinte bluetooth sans fil" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/FIFA 21 - Jeu vidéo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Hoverboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Montre de poche Harry Potter" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/PS5 - Console de jeu" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Paire de chaussures VANS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Peluche Poulpi Reversible" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Skateboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Smartphone" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/16-18/Voiture" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Affiche des premières fois à tamponner" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Appareil photo numérique pour enfant" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Ardoise murale GÉANTE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Carte du monde pour les petits" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Coffret de pâtes à modeler" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Horloge d'inspiration Montessori" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/La Coloritable" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/La petite encyclopédie des pourquoi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Labyrinthe à billes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Livre 'Ce que papa m'a dit'" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Livre géant sur La Ville" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Lunettes de soleil incassables" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Mallette de docteur en bois" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Peluche Odell la pieuvre" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Piscine à balles géantes pour enfant" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Poupée interactive Luvabella" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Tapis de jeu qui fait sac de rangement" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Un abonnement à un magazine éducatif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Un tipi pour faire des cabanes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/4-7/Un vélo à roulettes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Bande Dessinée les 101 dalmatiens" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Besrey Trotinette Pliable" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Bic - Crayons de couleur" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Blokus - Jeu de société" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Buki - Microscope électronique" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Bundai - Funs et Futés" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Geomag Classic" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Hot Wheels - Coffret 20 véhicules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/LEGO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Livre de recttes Harry Potter pour les Moldus" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Méga Blocks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Nerf Elite Surgefire + fléchettes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Nerfs Elite 2.0 - Blaster Flipshots" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Playmobil" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Revell 5040 Maquette de bateau Cuirassé Bismarck à monter" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Revell 5040 Maquette de bateau Queen Mary à monter" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Totem - Le jeu qui fait du bien" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Téléscope" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/UNO Extrême" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Toys.santaDB/8-11/Vtech - Kidizoom Duo DX" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CloseWindowThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ConnexionThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/NewChildThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OrderSubmissionThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SynchronizedUITextField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/naxelamour09@gmail.com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/prevel@enssat.fr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AccountCreationThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccountCreationThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Child.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Child.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConnexionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConnexionPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExistingChildHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExistingChildHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NewChildHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewChildHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OrdersManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrdersManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegistrationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegistrationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SantaHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SantaHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Toy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Toy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UIActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UIPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -21,17 +144,39 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="29QPRRRUL1nNWE1BisF5NyO45CL" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\naxel\OneDrive\Desktop\Folder\JavaEnssat\ProjetSanta\.idea" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="Projet_Java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -53,5 +198,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

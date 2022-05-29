@@ -1,6 +1,7 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 public class ExistingChildHomePage extends UIPage {
@@ -10,7 +11,7 @@ public class ExistingChildHomePage extends UIPage {
     private JPanel statusPanel;
     private DefaultListModel<Toy> listModel = new DefaultListModel<Toy>();
     private JList<Toy> wishList = new JList<Toy>(this.listModel);
-    private JTextArea message = new JTextArea();
+    private UITextArea message = new UITextArea();
     private JPanel checkBoxesPanel;
     private JCheckBox sentCheckBox = new JCheckBox("Envoyée au Père Noël");
     private JCheckBox validatedCheckBox = new JCheckBox("Validée par le Père Noël");
@@ -32,11 +33,7 @@ public class ExistingChildHomePage extends UIPage {
         orderPanel.setBackground(UI_BG_COLOR);
         orderPanel.setBorder(new EmptyBorder(10, 10, 300, 10));
         orderPanel.setLayout(new BoxLayout(orderPanel, BoxLayout.Y_AXIS));
-        orderPanel.add(new JLabel("Contenu actuel de ta commande"){
-            public void setForeground(Color fg) {
-                super.setForeground(UI_TEXT_COLOR);
-            }
-        });
+        orderPanel.add(new UILabel("Contenu actuel de ta commande"));
         configOrderContentPanel();
         orderPanel.add(this.orderContentPanel);
         return orderPanel;
@@ -61,11 +58,7 @@ public class ExistingChildHomePage extends UIPage {
         orderStatusPanel.setBackground(UI_BG_COLOR_2);
         orderStatusPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
         orderStatusPanel.setLayout(new BoxLayout(orderStatusPanel, BoxLayout.Y_AXIS));
-        orderStatusPanel.add(new JLabel("Statut de la commande"){
-            public void setForeground(Color fg) {
-                super.setForeground(UI_TEXT_COLOR);
-            }
-        });
+        orderStatusPanel.add(new UILabel("Statut de la commande"));
         configStatusPanel();
         orderStatusPanel.add(this.statusPanel);
 
@@ -144,5 +137,20 @@ public class ExistingChildHomePage extends UIPage {
         this.readyCheckBox.setSelected(true);
         this.sentCheckBox.setSelected(false);
         this.validatedCheckBox.setSelected(false);
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 }

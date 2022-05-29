@@ -1,6 +1,7 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class ConnexionPage extends UIPage {
 
@@ -46,7 +47,7 @@ public class ConnexionPage extends UIPage {
         this.pwdPanel.setBorder(new EmptyBorder(200, 60, 250, 60));
         this.pwdPanel.setBackground(UI_BG_COLOR);
         this.pwdPanel.setLayout(new BoxLayout(this.pwdPanel, BoxLayout.Y_AXIS));
-        this.pwdPanel.add(new UILabel("Connectes-toi à ton compte !"));
+        this.pwdPanel.add(new UILabel("      "));
         this.pwdPanel.add(new UILabel("Mot de passe :"));
         this.pwdPanel.add(this.pwd);
 
@@ -59,7 +60,9 @@ public class ConnexionPage extends UIPage {
         buttonsPanel.setBackground(UI_BG_COLOR);
         //buttonsPanel.setLayout(new BorderLayout());
         this.connexionButton.setText("Je me connecte !");
+        this.connexionButton.addActionListener(new UIActionListener(this));
         this.registrationButton.setText("Je crée un compte !");
+        this.registrationButton.addActionListener(new UIActionListener(this));
         buttonsPanel.add(this.connexionButton);
         buttonsPanel.add(new UILabel("     Nouveau ici ? >>>>>>> "));
         buttonsPanel.add(this.registrationButton);
@@ -84,4 +87,34 @@ public class ConnexionPage extends UIPage {
         return buttonsPanel;*/
     }
 
+    public UITextField getEmail() {
+        return this.email;
+    }
+
+    public UITextField getPwd() {
+        return pwd;
+    }
+
+    public JButton getConnexionButton() {
+        return connexionButton;
+    }
+
+    public JButton getRegistrationButton() {
+        return registrationButton;
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
 }

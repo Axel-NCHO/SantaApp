@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Order implements Serializable {
@@ -11,17 +12,14 @@ public class Order implements Serializable {
     private OrderState state;
     private ArrayList<Toy> toys;
 
-    public Order (Child owner, String msg, OrderState stateOfOrder, Toy ... toysInOrder){
+    public Order (Child owner, String msg, OrderState stateOfOrder, ArrayList<Toy> toysInOrder){
 
         this.owner = owner;
         this.message = msg;
         this.state = stateOfOrder;
         this.toys = new ArrayList<Toy>();
-        do {
-            this.toys.add(toysInOrder[nbToysInOrder]);
-            this.nbToysInOrder ++;
-        } while (this.nbToysInOrder < this.MAX_NB_TOYS && this.nbToysInOrder != toysInOrder.length);
-
+        this.toys = toysInOrder;
+        this.save();
     }
 
     public void addToy(Toy toy){
@@ -61,6 +59,10 @@ public class Order implements Serializable {
 
     public ArrayList<Toy> getToys() {
         return toys;
+    }
+
+    public void save() {
+        FileHelper.export("AppDataBase/Orders.santaDB/Ongoing/" + this.getOwner().getEmail().toString(),this);
     }
 
     public boolean equals(Object obj){
