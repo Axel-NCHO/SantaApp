@@ -58,6 +58,12 @@ public class Child extends User {
         this.hasOrdered = hasOrdered;
 
     }
+
+    public String toString () {
+        String child = "";
+        child += String.format("%s, %d, %s",this.getLastName(), this.getAge(), this.getAddress());
+        return child;
+    }
     @Override
     public boolean equals(Object obj) {
         if (obj == null){return false;}

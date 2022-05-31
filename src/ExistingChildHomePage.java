@@ -83,10 +83,13 @@ public class ExistingChildHomePage extends UIPage {
         this.checkBoxesPanel.setLayout(new BoxLayout(this.checkBoxesPanel, BoxLayout.Y_AXIS));
         this.sentCheckBox.setBackground(UI_BG_COLOR_2);
         this.sentCheckBox.setForeground(UI_TEXT_COLOR);
+        this.sentCheckBox.setEnabled(false);
         this.validatedCheckBox.setBackground(UI_BG_COLOR_2);
         this.validatedCheckBox.setForeground(UI_TEXT_COLOR);
+        this.validatedCheckBox.setEnabled(false);
         this.readyCheckBox.setBackground(UI_BG_COLOR_2);
         this.readyCheckBox.setForeground(UI_TEXT_COLOR);
+        this.readyCheckBox.setEnabled(false);
         this.checkBoxesPanel.add(this.sentCheckBox);
         this.checkBoxesPanel.add(this.validatedCheckBox);
         this.checkBoxesPanel.add(this.readyCheckBox);
@@ -131,12 +134,14 @@ public class ExistingChildHomePage extends UIPage {
         this.validatedCheckBox.setSelected(true);
         this.sentCheckBox.setSelected(false);
         this.readyCheckBox.setSelected(false);
+        this.modifyButtonPanel.remove(this.modifyButton);
     }
 
     public void selectReadyCheckBox(){
         this.readyCheckBox.setSelected(true);
         this.sentCheckBox.setSelected(false);
         this.validatedCheckBox.setSelected(false);
+        this.modifyButtonPanel.remove(this.modifyButton);
     }
 
     @Override

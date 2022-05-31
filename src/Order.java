@@ -73,4 +73,9 @@ public class Order implements Serializable {
         return order.getOwner().equals(this.getOwner());
 
     }
+
+    public String toString() {
+        String order = String.format("%s \n%d ans \n%s ", this.getOwner().getLastName(), this.getOwner().getAge(), this.getOwner().getAddress());
+        return order;
+    }
 }

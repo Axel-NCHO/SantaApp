@@ -24,9 +24,20 @@ public class Test {
             e.printStackTrace();
         }*/
 
+/*
+        RegistrationPage page = new RegistrationPage();
+        page.run();*/
 
+        /*
         ConnexionPage copage = new ConnexionPage();
         copage.run();
+        */
+
+
+        SantaHomePage page = new SantaHomePage();
+        page.run();
+
+
 
 
 

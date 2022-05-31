@@ -26,7 +26,7 @@ public class UIActionListener implements ActionListener {
             OrderSubmissionThread thread = new OrderSubmissionThread((NewChildHomePage) this.page);
             Order order = thread.startThread();
             if(order != null){
-                //new OrderCheckingThread(order).start();
+                new OrderCheckingThread(order).start();
                 new CloseWindowThread(page).start();
             }
         }
@@ -46,24 +46,44 @@ public class UIActionListener implements ActionListener {
             }
         }
 
+        if (page instanceof ExistingChildHomePage) {
+            // On veut pouvoir reafficher NewChildHomePage mais contenant déjà la commande de l'enfant
+            // ExistingChildHomePage page = (ExistingChildHomePage) this.page;
+            // ...
+        }
+
         if (this.page instanceof SantaHomePage) {
             SantaHomePage page = (SantaHomePage) this.page;
+            // Menu buttons
             switch (e.getActionCommand()) {
                 case "Commandes en attente de validation" :
-                    page.clear();
-                    page.load(page.getOngoingOrdersPage());
+                    page.getMainCardLayout().show(page.getContentPane(), "1");
+                    break;
+                case "Commandes validées" :
+                    page.getMainCardLayout().show(page.getContentPane(), "2");
+                    break;
+                case "Commandes prêtes" :
+                    page.getMainCardLayout().show(page.getContentPane(), "3");
                     break;
                 case "Lutins préparateurs" :
-                    page.clear();
-                    page.load(page.getPackagingElfPage());
+                    page.getMainCardLayout().show(page.getContentPane(), "4");
                     break;
                 case "Lutins soigneurs" :
-                    page.clear();
-                    page.load(page.getHealingElfPage());
+                    page.getMainCardLayout().show(page.getContentPane(), "5");
                     break;
+                case "Gestion des rennes" :
+                    page.getMainCardLayout().show(page.getContentPane(), "6");
+                    break;
+
+                case "Précédent" :
+                    page.getCardLayoutForContentPanel().previous(page.getContentPanel());
+                    break;
+                case "Suivant" :
+                    page.getCardLayoutForContentPanel().next(page.getContentPanel());
             }
 
         }
 
     }
+
 }
