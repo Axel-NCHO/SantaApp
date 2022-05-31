@@ -8,7 +8,8 @@ public abstract class UIPage extends JFrame implements UiFinals, KeyListener {
         this.setTitle(APP_NAME + " - v" + APP_VERSION + " - " + title);
         this.setSize(new Dimension(1200, 700));
         this.setResizable(false);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null); // center the frame
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     public void run() {

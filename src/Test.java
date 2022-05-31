@@ -1,13 +1,11 @@
-import java.util.Date;
-
 public class Test {
 
     public static void main(String[] args){
-
-        /*OrdersManager manager = new OrdersManager();
+/*
+        OrdersManager manager = new OrdersManager();
         Email mail = new Email("naxelamour09@gmail.com");
         Email mail2 = new Email("moijoan99@gmail.com");
-        Child Axel = new Child("Axel", "Ncho", mail, "mangerOuEtreMangé", new Date(), "6 Penford Drive", 5);
+        Child Axel = new Child("Axel", "Ncho", mail, "mangerOuEtreMangé", 15, "6 Penford Drive", Gentleness.EXCELLENT_BOY);
         Axel.setHasOrdered(false);
         Order AxelsOrder = new Order(Axel, "Salut Père Noël !", OrderState.ONGOING, new Toy("AK47", 5), new Toy("PS5", 5), new Toy("PS5", 5), new Toy("PS5", 5), new Toy("PS5", 5));
         manager.addOrder(AxelsOrder);
@@ -23,11 +21,12 @@ public class Test {
             //System.out.println("Utilisateur " + mail.toString() + " inexistant.");
             e.printStackTrace();
         }*/
-        /*
-        RegistrationPage page = new RegistrationPage();
-        page.run();*/
 
-        RegistrationPage page = new RegistrationPage();
-        page.run();
+
+        ConnexionPage copage = new ConnexionPage();
+        copage.run();
+
+
+
     }
 }

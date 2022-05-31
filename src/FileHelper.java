@@ -63,10 +63,6 @@ public class FileHelper {
                 System.out.println("erreur détectée");
                 e.printStackTrace();
             }
-
-        }
-        else{
-            System.out.println("le fichier " + path + " n'existe pas");
         }
         return obj;
     }

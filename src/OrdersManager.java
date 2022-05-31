@@ -2,10 +2,10 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class OrdersManager {
-    private ArrayList<Order> receivedOrders;
-    private ArrayList<Order> validOrders;
-    private  ArrayList<Order> preparedOrders;
-    private final String orderPath = "AppDataBase/Orders.santaDB/";
+    private static ArrayList<Order> receivedOrders;
+    private static ArrayList<Order> validOrders;
+    private  static ArrayList<Order> preparedOrders;
+    private static final String orderPath = "AppDataBase/Orders.santaDB/";
 
     public OrdersManager (){
         receivedOrders = new ArrayList<Order>();
@@ -18,11 +18,12 @@ public class OrdersManager {
             receivedOrders = new ArrayList<Order>();
             validOrders = new ArrayList<Order>();
             preparedOrders = new ArrayList<Order>();
-            String[] Ongoing = new File(orderPath + "Ongoing/").list();
-            String[] Validated = new File(orderPath + "Validated/").list();
-            String[] Ready = new File(orderPath + "Ready/").list();
+            String[] Ongoing = new File(FileHelper.getAppPath() +  orderPath + "Ongoing/").list();
+            String[] Validated = new File(FileHelper.getAppPath() +  orderPath + "Validated/").list();
+            String[] Ready = new File(FileHelper.getAppPath() +  orderPath + "Ready/").list();
             for(int i = 0; i < Ongoing.length; i++){
-                receivedOrders.add((Order) FileHelper.load(orderPath + "Ongoing/" + Ongoing[i]));
+                Order tmp = (Order) FileHelper.load(orderPath + "Ongoing/" + Ongoing[i]);
+                receivedOrders.add(tmp);
             }
             for(int i = 0; i < Validated.length; i++){
                 validOrders.add((Order) FileHelper.load(orderPath + "Validated/" + Validated[i]));
@@ -33,7 +34,7 @@ public class OrdersManager {
         }
     }
 
-    public void addOrder (Order order){
+    public static void addOrder (Order order){
         if(!order.getOwner().getHasOrdered()){
             order.setState(OrderState.ONGOING);
             receivedOrders.add(order);
@@ -42,7 +43,7 @@ public class OrdersManager {
         }
     }
 
-    public void setValid (Order order){
+    public static void setValid (Order order){
         order.setState(OrderState.VALIDATED);
         receivedOrders.remove(order);
         validOrders.add(order);
@@ -50,7 +51,7 @@ public class OrdersManager {
         FileHelper.export(orderPath + "Validated/" + order.getOwner().getEmail().toString(),order);
     }
 
-    public void setPrepared (Order order){
+    public static void setPrepared (Order order){
         order.setState(OrderState.PREPARED);
         validOrders.remove(order);
         preparedOrders.add(order);
@@ -70,12 +71,12 @@ public class OrdersManager {
         return validOrders;
     }
 
-    public void cancelOrder(Order order){
+    public static void cancelOrder(Order order){
         receivedOrders.remove(order);
         FileHelper.remove(orderPath + "Ready/" + order.getOwner().getEmail().toString());
     }
 
-    public void removeToy(Order order, Toy toy){
+    public static void removeToy(Order order, Toy toy){
         order.removeToy(toy);
     }
 }

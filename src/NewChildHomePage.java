@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import javax.swing.border.EmptyBorder;
@@ -15,13 +16,16 @@ public class NewChildHomePage extends UIPage {
     private DefaultListModel<Toy> listModel = new DefaultListModel<Toy>();
     private JList<Toy> listOfAvailableToys = new JList<Toy>(listModel); // Corresponding to the age of the child
     private JScrollPane scrollPaneForToysList = new JScrollPane();
-    private UITextField nbChoosenToys = new UITextField();
+    private SynchronizedUITextField nbChoosenToys = new SynchronizedUITextField(false); //
     private UITextField nbMaxToys = new UITextField();
     private UITextArea message = new UITextArea();
     private JButton sendButton = new JButton();
+    private Child child; // We need to know the age of the child so that we can suggest toys of his/her age.
+                         // We also need to know whose order ii is.
 
-    public NewChildHomePage(){
-        super("Commande tes cadeaux");
+    public NewChildHomePage(Child child){
+        super("Commande tes cadeaux " + child.getLastName());
+        this.child = child;
         this.getContentPane().setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
         this.getContentPane().add(createToysPanel());
         this.getContentPane().add(createMessagePanel());
@@ -47,14 +51,33 @@ public class NewChildHomePage extends UIPage {
         this.firstToysRow.setBorder(new EmptyBorder(10, 20, 0, 10));
         this.firstToysRow.setLayout(new BoxLayout(this.firstToysRow, BoxLayout.Y_AXIS));
         this.firstToysRow.add(new UILabel("Choisis " + MAX_NB_TOYS_PER_ORDER + " jouets. Ils sont tous de ton âge !"));
-        //fillListOfAvailableToys(); cad fill listModel
-        for(int i=0; i<50; i++){
-            this.listModel.addElement(new Toy("PS5", 13));
-        }
+        fillListOfAvailableToys();
         this.scrollPaneForToysList.setBorder(new LineBorder(UI_BORDER_COLOR, 1, true));
         this.scrollPaneForToysList.setViewportView(this.listOfAvailableToys);
         this.listOfAvailableToys.setLayoutOrientation(JList.VERTICAL);
         this.firstToysRow.add(this.scrollPaneForToysList);
+    }
+
+    private void fillListOfAvailableToys(){
+        Integer minAge = 0, maxAge = 3;
+
+        if (4 <= child.getAge() && child.getAge() <= 7){
+            minAge = 4;maxAge = 7;
+        }
+        if (8 <= child.getAge() && child.getAge() <= 11){
+            minAge = 8;maxAge = 11;
+        }
+        if (12 <= child.getAge() && child.getAge() <= 15){
+            minAge = 12;maxAge = 15;
+        }
+        if (16 <= child.getAge() && child.getAge() <= 18){
+            minAge = 16;maxAge = 18;
+        }
+        String toysFolder = "AppDataBase/Toys.santaDB/" + minAge.toString() + "-" + maxAge.toString();
+        String [] toysList = new File(toysFolder).list();
+        for (String toy : toysList){
+            this.listModel.addElement((Toy)FileHelper.load(toysFolder +"/" + toy));
+        }
     }
 
     private void configSecondToysRow() {
@@ -66,6 +89,11 @@ public class NewChildHomePage extends UIPage {
         this.nbChoosenToys.setBackground(UI_TEXTFIELD_COLOR);
         this.nbChoosenToys.setBorder(new LineBorder(UI_BORDER_COLOR, 1, true));
         this.nbChoosenToys.setEditable(false);
+        /*try {
+            this.nbChoosenToys.setText(Integer.toString(this.listOfAvailableToys.getSelectedIndices().length));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
         this.secondToysRow.add(this.nbChoosenToys);
         this.secondToysRow.add(new UILabel("Nombre maximal de jouets autorisé"));
         this.nbMaxToys.setBackground(UI_TEXTFIELD_COLOR);
@@ -106,8 +134,40 @@ public class NewChildHomePage extends UIPage {
         sendButtonPanel.setBorder(new EmptyBorder(40, 10, 50, 10));
         //sendButtonPanel.setLayout(new BorderLayout());
         this.sendButton.setText("Envoyer ma commande au Père Noël");
+        this.sendButton.addActionListener(new UIActionListener(this));
         sendButtonPanel.add(this.sendButton/*, BorderLayout.NORTH*/);
         return sendButtonPanel;
     }
 
+    public SynchronizedUITextField getNbChoosenToys() {
+        return this.nbChoosenToys;
+    }
+
+    public JList getListOfAvailableToys() {
+        return this.listOfAvailableToys;
+    }
+
+
+    public Child getChild() {
+        return this.child;
+    }
+
+    public UITextArea getMessage() {
+        return this.message;
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
 }

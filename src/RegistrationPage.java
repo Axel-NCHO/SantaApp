@@ -1,12 +1,7 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class RegistrationPage extends UIPage {
 
@@ -53,8 +48,8 @@ public class RegistrationPage extends UIPage {
         this.nameEmailAndBirthPanel.add(this.lastName);
         this.nameEmailAndBirthPanel.add(new UILabel("Adresse mail : "));
         this.nameEmailAndBirthPanel.add(this.email);
-        this.nameEmailAndBirthPanel.add(new UILabel("Date de naissance : "));
-        this.dateOfBirth.setText("yyyy-MM-dd");
+        this.nameEmailAndBirthPanel.add(new UILabel("Age : "));
+        this.dateOfBirth.setText("Ex : 6");
         this.nameEmailAndBirthPanel.add(this.dateOfBirth);
 
     }
@@ -65,7 +60,7 @@ public class RegistrationPage extends UIPage {
         this.agePwdAndAddressPanel.setBorder(new EmptyBorder(150, 60, 130, 60));
         this.agePwdAndAddressPanel.setBackground(UI_BG_COLOR);
         this.agePwdAndAddressPanel.setLayout(new BoxLayout(this.agePwdAndAddressPanel, BoxLayout.Y_AXIS));
-        this.agePwdAndAddressPanel.add(new UILabel("Crée ton compte !"));
+        this.agePwdAndAddressPanel.add(new UILabel("    "));
         this.agePwdAndAddressPanel.add(new UILabel("Rue :"));
         this.agePwdAndAddressPanel.add(this.age);
         this.agePwdAndAddressPanel.add(new UILabel("Ville :"));
@@ -110,15 +105,8 @@ public class RegistrationPage extends UIPage {
         return this.pwd;
     }
 
-    public Date getDateOfBirth(){
-        if (this.dateOfBirth.getText() != "") {
-            try {
-                return new SimpleDateFormat("yyyy-MM-dd").parse(this.dateOfBirth.getText());
-            } catch (ParseException e) {
-                return null;
-            }
-        }
-        return null;
+    public UITextField getAge(){
+        return this.dateOfBirth;
     }
 
     public String getAddress(){

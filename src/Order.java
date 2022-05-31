@@ -1,8 +1,9 @@
 import java.io.Serializable;
+
 import java.util.ArrayList;
 
 public class Order implements Serializable {
-
+    private static final long serialVersionUID = 1286242683;
     public final Integer MAX_NB_TOYS = 5;
     private Integer nbToysInOrder = 0;
 
@@ -11,17 +12,14 @@ public class Order implements Serializable {
     private OrderState state;
     private ArrayList<Toy> toys;
 
-    public Order (Child owner, String msg, OrderState stateOfOrder, Toy ... toysInOrder){
+    public Order (Child owner, String msg, OrderState stateOfOrder, ArrayList<Toy> toysInOrder){
 
         this.owner = owner;
         this.message = msg;
         this.state = stateOfOrder;
         this.toys = new ArrayList<Toy>();
-        do {
-            this.toys.add(toysInOrder[nbToysInOrder]);
-            this.nbToysInOrder ++;
-        } while (this.nbToysInOrder < this.MAX_NB_TOYS && this.nbToysInOrder != toysInOrder.length);
-
+        this.toys = toysInOrder;
+        this.save();
     }
 
     public void addToy(Toy toy){
@@ -63,6 +61,10 @@ public class Order implements Serializable {
         return toys;
     }
 
+    public void save() {
+        FileHelper.export("AppDataBase/Orders.santaDB/Ongoing/" + this.getOwner().getEmail().toString(),this);
+    }
+
     public boolean equals(Object obj){
         if (obj == null){return false;}
         if (obj == this){return true;}
@@ -71,4 +73,6 @@ public class Order implements Serializable {
         return order.getOwner().equals(this.getOwner());
 
     }
+
+    public String trash(){return "";}
 }

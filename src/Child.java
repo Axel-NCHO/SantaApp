@@ -1,18 +1,15 @@
-import java.util.Date;
-
 public class Child extends User {
     
-    private Date dateOfBirth;
+    private Integer age;
     private String address;
-    private Integer minimalAgeToys;
     private Gentleness gentleness;
     private Boolean hasOrdered;
 
-    public Child (String fName, String lName, Email email, String pwd, Date birthDate, String addr, Integer minAgeToys){
+    public Child (String fName, String lName, Email email, String pwd, Integer age, String addr, Gentleness gentleness){
         super(fName, lName, email, pwd);
-        this.dateOfBirth = birthDate;
+        this.age = age;
         this.address = addr;
-        this.minimalAgeToys = minAgeToys;
+        this.gentleness = gentleness;
         this.save();
     }
 
@@ -22,24 +19,19 @@ public class Child extends User {
         super.setFirstName(loadedChild.getFirstName());
         super.setLastName(loadedChild.getLastName());
         super.setPassword(loadedChild.getPassword());
-        this.dateOfBirth = loadedChild.getDateOfBirth();
+        this.age = loadedChild.getAge();
         this.address = loadedChild.getAddress();
-        this.minimalAgeToys = loadedChild.getMinimalAgeToys();
         this.hasOrdered = loadedChild.getHasOrdered();
     }
 
     
 
-    public Date getDateOfBirth (){
-        return this.dateOfBirth;
+    public Integer getAge (){
+        return this.age;
     }
 
     public String getAddress() {
         return address;
-    }
-
-    public Integer getMinimalAgeToys() {
-        return minimalAgeToys;
     }
 
     public Gentleness getGentleness (){
@@ -47,12 +39,8 @@ public class Child extends User {
     }
 
     public Boolean getHasOrdered (){return this.hasOrdered ;}
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public void setMinimalAgeToys(Integer minimalAgeToys) {
-        this.minimalAgeToys = minimalAgeToys;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public void setAddress(String address) {
