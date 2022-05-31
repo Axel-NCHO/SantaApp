@@ -1,9 +1,9 @@
 import java.io.Serializable;
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
 
 public class Order implements Serializable {
-
+    private static final long serialVersionUID = 1286242683;
     public final Integer MAX_NB_TOYS = 5;
     private Integer nbToysInOrder = 0;
 

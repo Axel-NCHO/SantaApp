@@ -1,6 +1,7 @@
 import java.io.Serializable;
 
 public abstract class User implements Serializable {
+    private static final long serialVersionUID = 344120892;	
     private String firstName;
     private String lastName;
     private Email email;
