@@ -18,11 +18,12 @@ public class OrdersManager {
             receivedOrders = new ArrayList<Order>();
             validOrders = new ArrayList<Order>();
             preparedOrders = new ArrayList<Order>();
-            String[] Ongoing = new File(orderPath + "Ongoing/").list();
-            String[] Validated = new File(orderPath + "Validated/").list();
-            String[] Ready = new File(orderPath + "Ready/").list();
+            String[] Ongoing = new File(FileHelper.getAppPath() +  orderPath + "Ongoing/").list();
+            String[] Validated = new File(FileHelper.getAppPath() +  orderPath + "Validated/").list();
+            String[] Ready = new File(FileHelper.getAppPath() +  orderPath + "Ready/").list();
             for(int i = 0; i < Ongoing.length; i++){
-                receivedOrders.add((Order) FileHelper.load(orderPath + "Ongoing/" + Ongoing[i]));
+                Order tmp = (Order) FileHelper.load(orderPath + "Ongoing/" + Ongoing[i]);
+                receivedOrders.add(tmp);
             }
             for(int i = 0; i < Validated.length; i++){
                 validOrders.add((Order) FileHelper.load(orderPath + "Validated/" + Validated[i]));

@@ -6,7 +6,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class FileHelper {
-    private static String appPath = "";//"/home/paul/Documents/java/SantaAppProject/"; //modifier pour changer le chemin de l'application
+    private static String appPath = "/home/paul/Documents/java/SantaAppProject/"; //modifier pour changer le chemin de l'application
 
     public static String getAppPath(){
         return appPath;
@@ -63,10 +63,6 @@ public class FileHelper {
                 System.out.println("erreur détectée");
                 e.printStackTrace();
             }
-
-        }
-        else{
-            System.out.println("le fichier " + path + " n'existe pas");
         }
         return obj;
     }
