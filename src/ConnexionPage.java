@@ -3,12 +3,38 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
+/**
+ * <h1>ConnexionPage</h1>
+ * Page used by a {@link User} to connect to his/her account.
+ * <hr>
+ *
+ * Splitted into 2 main panels :
+ *
+ * <ul><li>personnalInfosPanel</li>
+ * For all the personal informations (e-mail and password). It implements a {@link GridLayout}.
+ *
+ * <li>buttonsPanel</li>
+ * For the 2 buttons (submit and register)</ul>
+ *
+ * If connection is done with success, the user is redirected to the right
+ * page depending on the e-mail:
+ * <ul><li>{@link SantaHomePage} if it matches Santa.</li>
+ * <li>Packaging or Medical Elf home page if it matches an {@link Elf}.</li>
+ * <li>{@link ExistingChildHomePage} by default.</li></ul>
+ * <hr>*/
 public class ConnexionPage extends UIPage {
 
-    private UITextField email = new UITextField();
-    private UITextField pwd = new UITextField();
-    private JButton connexionButton = new JButton();
-    private JButton registrationButton = new JButton();
+    /* The e-mail field of the connection page */
+    private final UITextField email = new UITextField();
+
+    /* The password field of the connection page */
+    private final UITextField pwd = new UITextField();
+
+    /* The connection button */
+    private final JButton connexionButton = new JButton();
+
+    /* The button to register if the account does not exist */
+    private final JButton registrationButton = new JButton();
     private JPanel emailPanel;
     private JPanel pwdPanel;
 
@@ -27,8 +53,8 @@ public class ConnexionPage extends UIPage {
         personalInformationsPanel.add(this.emailPanel);
         configPasswordPanel();
         personalInformationsPanel.add(this.pwdPanel);
-        return personalInformationsPanel;
 
+        return personalInformationsPanel;
     }
 
     private void configEmailPanel(){
@@ -39,7 +65,6 @@ public class ConnexionPage extends UIPage {
         this.emailPanel.add(new UILabel("Connectes-toi à ton compte !"));
         this.emailPanel.add(new UILabel("Email :"));
         this.emailPanel.add(this.email);
-
     }
 
     private void configPasswordPanel(){
@@ -50,15 +75,12 @@ public class ConnexionPage extends UIPage {
         this.pwdPanel.add(new UILabel("      "));
         this.pwdPanel.add(new UILabel("Mot de passe :"));
         this.pwdPanel.add(this.pwd);
-
     }
 
     private JPanel createButtonsPanel(){
         JPanel buttonsPanel = new JPanel();
         buttonsPanel.setBorder(new EmptyBorder(10, 60, 80, 60));
-        //submitButtonPanel.setBounds(0, 100, 100, 50);
         buttonsPanel.setBackground(UI_BG_COLOR);
-        //buttonsPanel.setLayout(new BorderLayout());
         this.connexionButton.setText("Je me connecte !");
         this.connexionButton.addActionListener(new UIActionListener(this));
         this.registrationButton.setText("Je crée un compte !");
@@ -66,41 +88,20 @@ public class ConnexionPage extends UIPage {
         buttonsPanel.add(this.connexionButton);
         buttonsPanel.add(new UILabel("     Nouveau ici ? >>>>>>> "));
         buttonsPanel.add(this.registrationButton);
+
         return buttonsPanel;
-        /*
-        buttonsPanel.setLayout(new BorderLayout());
-        this.connexionButton.setText("Je me connecte !");
-        this.registrationButton.setText("Je crée un compte !");
-        buttonsPanel.add(this.connexionButton, BorderLayout.NORTH);
-        buttonsPanel.add(new JLabel(">"), BorderLayout.WEST);
-        buttonsPanel.add(new JLabel("------- Nouveau ici ? ---------"), BorderLayout.CENTER);
-        buttonsPanel.add(new JLabel("<"), BorderLayout.EAST);
-        buttonsPanel.add(this.registrationButton, BorderLayout.SOUTH);
-        return buttonsPanel;*/
-        /*
-        buttonsPanel.setLayout(new BoxLayout(buttonsPanel, BoxLayout.Y_AXIS));
-        this.connexionButton.setText("Je me connecte !");
-        this.registrationButton.setText("Je crée un compte !");
-        buttonsPanel.add(this.connexionButton);
-        buttonsPanel.add(new JLabel("------- Nouveau ici ? ---------"));
-        buttonsPanel.add(this.registrationButton);
-        return buttonsPanel;*/
     }
 
+    /**
+     * @return {@link UITextField} that contains the e-mail.*/
     public UITextField getEmail() {
         return this.email;
     }
 
+    /**
+     * @return {@link UITextField} that contains the password.*/
     public UITextField getPwd() {
         return pwd;
-    }
-
-    public JButton getConnexionButton() {
-        return connexionButton;
-    }
-
-    public JButton getRegistrationButton() {
-        return registrationButton;
     }
 
     @Override

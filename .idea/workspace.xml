@@ -2,22 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84afeec7-9556-42db-95a6-7bc41606407a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/img/bells.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OrderCheckingThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UIListCellRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Validated/ammmm@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Validated/nax@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/ammmm@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/manu@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/nax@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/santa@santa.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FindOrderByEmailThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ongoing/naxelamour09@gmail.com" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ongoing/toronto@gmail.com" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/naxelamour09@gmail.com" beforeDir="false" afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/naxelamour09@gmail.com" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/toronto@gmail.com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ongoing/prevel@enssat.fr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ongoing/yann@gmail.com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/naxelamour09@gmail.com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/prevel@enssat.fr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/yann@gmail.com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AccountCreationThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccountCreationThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Child.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Child.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CloseWindowThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CloseWindowThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConnexionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConnexionPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ConnexionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConnexionThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EmploymentStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmploymentStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ExistingChildHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExistingChildHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gentleness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gentleness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MedElf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MedElf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NewChildHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewChildHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NewChildThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewChildThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OrderCheckingThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderCheckingThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OrderState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OrderSubmissionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderSubmissionThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OrdersManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrdersManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegistrationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegistrationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Santa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Santa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SantaHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SantaHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UIActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIActionListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UIPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/validationDialog.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,5 +123,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

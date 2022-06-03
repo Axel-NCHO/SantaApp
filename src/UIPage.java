@@ -6,6 +6,10 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * <h1>UIPage</h1>
+ * The <u>abstract class</u> UIPage defines the commons elements to all the frames
+ * of the user interface. It must be extended to create new types of frame.*/
 public abstract class UIPage extends JFrame implements UiFinals, KeyListener {
 
     public UIPage (String title){
@@ -20,9 +24,11 @@ public abstract class UIPage extends JFrame implements UiFinals, KeyListener {
         this.setSize(new Dimension(1200, 700));
         this.setResizable(false);
         this.setLocationRelativeTo(null); // center the frame
-        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); // closing a frame does not end the whole program
     }
 
+    /**
+     * Show the UIPage object*/
     public void run() {
         this.setVisible(true);
     }

@@ -4,11 +4,22 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
+/**
+ * <h1>SantaHomePage</h1>
+ * Page used by {@link Santa} to manage the whole app.
+ * <hr>
+ *
+ *  It contains one main contentPane panel that implements a {@link CardLayout}.
+ *  The cardLayout allows to remain in the same frame while navigating in the
+ *  {@link JMenuBar} menu bar.
+ * <hr>*/
 public class SantaHomePage extends UIPage {
 
-    private OrdersManager ordersManager = new OrdersManager(true);
+    /* OrdersManager that provides all the orders in the database */
+    private final OrdersManager ordersManager;
+
+    /* List of received orders */
     private JList<Order> list;
-    private DefaultListModel<Order> listModel;
     private JPanel ongoingOrdersPage;
     private JPanel validatedOrdersPage;
     private JPanel readyOrdersPage;
@@ -16,18 +27,30 @@ public class SantaHomePage extends UIPage {
     private JPanel healingElfPage;
     private JPanel reindersPage;
     private final JMenuBar menubar = new JMenuBar();
+
+    /* The card manager of this page. It allows to have multiple panels in the
+    * main frame and show one of them at a time (navigate on the page via the
+    * menu bar). */
     private final CardLayout cardLayout = new CardLayout();
+
+    /* The card manager of the contentPanel. It allows to load the content of each
+    order in the list and show one of them at a time by pressing 'précédent' or
+    'suivant' button. */
     private final CardLayout cardLayoutForContentPanel = new CardLayout();
+
+    /* Panel managed by the previous cardLayoutForContentPanel. It displays the content of
+    * one order at a time*/
     private JPanel contentPanel;
-    private ArrayList<JCheckBox> validatedToys;
-    private JButton validateButton;
-    private JButton cancelButton;
-    private JButton previous;
-    private JButton next;
+
+    /* List of JCheckboxes. It contains the displayed JCheckboxes. Those represent the toys in
+    * an order. This list allows to know which toys are not validated by santa so that they can
+    * be removed from the order.*/
+    private ArrayList<JCheckBox> validatedToys= new ArrayList<JCheckBox>();
 
 
-    public SantaHomePage() {
+    public SantaHomePage(OrdersManager manager) {
         super("Page d'accueil du Père Noël");
+        this.ordersManager = manager;
         this.getContentPane().setLayout(cardLayout);
         configMenubar();
         this.setJMenuBar(menubar);
@@ -105,7 +128,7 @@ public class SantaHomePage extends UIPage {
         listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS));
         listPanel.add(new UILabel("Commandes reçues"));
 
-        listModel = new DefaultListModel<Order>();
+        DefaultListModel<Order> listModel = new DefaultListModel<Order>();
         this.list = new JList<Order>(listModel);
         this.list.setCellRenderer(new UIListCellRenderer());
         for (Order order : managersList) {
@@ -138,6 +161,7 @@ public class SantaHomePage extends UIPage {
 
     private JPanel create_InContentPanel(Order order) {
         JPanel _inContentPanel = new JPanel();
+        _inContentPanel.setName(order.getOwner().getEmail().toString());
         _inContentPanel.setLayout(new BoxLayout(_inContentPanel, BoxLayout.Y_AXIS));
 
         JPanel personalInfosPanel = new JPanel();
@@ -151,7 +175,6 @@ public class SantaHomePage extends UIPage {
         for (Toy toy : order.getToys()) {
             JCheckBox checkBox = new JCheckBox(toy.getName());
             whishListPanel.add(checkBox);
-            this.validatedToys = new ArrayList<JCheckBox>();
             this.validatedToys.add(checkBox);
         }
         _inContentPanel.add(whishListPanel);
@@ -165,14 +188,14 @@ public class SantaHomePage extends UIPage {
         _inContentPanel.add(messagePanel);
 
         JPanel buttonPanel = new JPanel();
-        this.previous = new JButton("Précédent");
-        this.previous.addActionListener(new UIActionListener(this));
-        this.validateButton = new JButton("Valider");
-        this.validateButton.addActionListener(new UIActionListener(this));
-        this.cancelButton = new JButton("Annuler la commande");
-        this.cancelButton.addActionListener(new UIActionListener(this));
-        this.next = new JButton("Suivant");
-        this.next.addActionListener(new UIActionListener(this));
+        JButton previous = new JButton("Précédent");
+        previous.addActionListener(new UIActionListener(this));
+        JButton validateButton = new JButton("Valider");
+        validateButton.addActionListener(new UIActionListener(this));
+        JButton cancelButton = new JButton("Annuler la commande");
+        cancelButton.addActionListener(new UIActionListener(this));
+        JButton next = new JButton("Suivant");
+        next.addActionListener(new UIActionListener(this));
         buttonPanel.add(previous);
         buttonPanel.add(validateButton);
         buttonPanel.add(cancelButton);
@@ -212,6 +235,10 @@ public class SantaHomePage extends UIPage {
 
     public JList<Order> getList() {
         return this.list;
+    }
+
+    public OrdersManager getOrdersManager() {
+        return this.ordersManager;
     }
 
     @Override

@@ -11,10 +11,24 @@ public class ConnexionThread extends Thread {
     @Override
     public void run() {
         if (new Email(page.getEmail().getText()).isValidEmail()) {
+            OrdersManager manager = new OrdersManager(true);
             if (page.getEmail().getText().endsWith("@elf.com")) {}
-            else if (page.getEmail().getText().endsWith("@santa.com")) {}
+            else if (page.getEmail().getText().equals("santa@santa.com")) {
+                Santa santa = (Santa) FileHelper.load("AppDataBase/UsersFiles.santaDB/santa@santa.com");
+                if (santa.getPassword().equals(page.getPwd().getText())) {
+                    new Thread() {
+                        public void run() {
+                            SantaHomePage santaHomePage = new SantaHomePage(manager);
+                            santaHomePage.run();
+                        }
+                    }.start();
+                    new CloseWindowThread(page).start();
+                } else {
+                    JOptionPane.showMessageDialog(page, "Mot de passe incorrect.", "Erreur", JOptionPane.ERROR_MESSAGE);
+                }
+
+            }
             else {
-                OrdersManager manager = new OrdersManager(true);
                 Order order = null;
                 int i=0; //iterator
                 // Searching in received orders

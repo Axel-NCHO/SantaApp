@@ -1,7 +1,13 @@
+/**
+ * <h1>Elf</h1>
+ * <u>Abstract</u> class that represents an elf.*/
 public abstract class Elf extends User{
 
+    /* The employment status of an elf */
     private EmploymentStatus status;
 
+    /**
+     * Create a new elf.*/
     public Elf(String fn, String ln, Email mail, String pw, EmploymentStatus st) {
         super(fn, ln, mail, pw);
         status = st;

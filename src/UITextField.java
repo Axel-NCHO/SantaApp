@@ -1,6 +1,11 @@
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
+/**
+ * <h1>UITextField</h1>
+ * Customized {@link JTextField} with the constants UI_TEXTFIELD_COLOR
+ * as background color, UI_TEXT_COLOR as foreground color and UI_BORDER_COLOR
+ * as {@link LineBorder} color.*/
 public class UITextField extends JTextField implements UiFinals {
 
     public UITextField (){

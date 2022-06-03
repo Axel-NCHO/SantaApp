@@ -4,20 +4,47 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
+/**
+ * <h1>ExistingChildHomePage</h1>
+ * Page used by a {@link Child} to check/modify
+ * his/her order if it is still possible.
+ * <hr>
+ * The child is called the 'owner' of the page.
+ *
+ * The page is splitted into  main panels :
+ *
+ * <ul><li>OrderPanel</li>
+ * For the content of an {@link Order}.
+ *
+ * <li>OrderStatusPanel</li>
+ * For checking the {@link OrderState} state of an order.</ul>
+ * <hr>*/
 public class ExistingChildHomePage extends UIPage {
 
+    /* The owner of the page */
     private Child owner;
     private JPanel orderContentPanel;
     private JPanel statusPanel;
-    private DefaultListModel<Toy> listModel = new DefaultListModel<Toy>();
-    private JList<Toy> wishList = new JList<Toy>(this.listModel);
-    private UITextArea message = new UITextArea();
+
+    /* The list model implemented by the following 'wishList' attribute.*/
+    private final DefaultListModel<Toy> listModel = new DefaultListModel<Toy>();
+
+    /* The list that contains the toys in the order loaded from the data base. */
+    private final JList<Toy> wishList = new JList<Toy>(this.listModel);
+
+    private final UITextArea message = new UITextArea();
     private JPanel checkBoxesPanel;
-    private JCheckBox sentCheckBox = new JCheckBox("Envoyée au Père Noël");
-    private JCheckBox validatedCheckBox = new JCheckBox("Validée par le Père Noël");
-    private JCheckBox readyCheckBox = new JCheckBox("Prête à être livrée");
+
+    /* CheckBox selected if the order has been sent. Not editable by the user */
+    private final JCheckBox sentCheckBox = new JCheckBox("Envoyée au Père Noël");
+
+    /* CheckBox selected if the order has been validated. Not editable by the user */
+    private final JCheckBox validatedCheckBox = new JCheckBox("Validée par le Père Noël");
+
+    /* CheckBox selected if the order is ready. Not editable by the user */
+    private final JCheckBox readyCheckBox = new JCheckBox("Prête à être livrée");
     private JPanel modifyButtonPanel;
-    private JButton modifyButton = new JButton("Modifier la commande ?");
+    private final JButton modifyButton = new JButton("Modifier la commande ?");
 
 
     public ExistingChildHomePage(Child owner){
@@ -98,11 +125,6 @@ public class ExistingChildHomePage extends UIPage {
     private void configModifyButtonPanel() {
         this.modifyButtonPanel = new JPanel();
         this.modifyButtonPanel.setBackground(UI_BG_COLOR_2);
-        //this.modifyButtonPanel.setBorder(new EmptyBorder(0, 50, 0, 50));
-        /* Add in keyPressed listener | this.modifyButton.setBackground(UI_BG_COLOR);
-        this.modifyButton.setForeground(UI_FG_COLOR);
-        this.modifyButton.setOpaque(true);
-        this.modifyButton.setBorderPainted(false);*/
         this.modifyButtonPanel.add(this.modifyButton);
     }
 

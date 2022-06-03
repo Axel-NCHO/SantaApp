@@ -24,18 +24,18 @@ public class Test {
 
 /*
         RegistrationPage page = new RegistrationPage();
-        page.run();*/
+        page.run();
+*/
 
-        /*
         ConnexionPage copage = new ConnexionPage();
         copage.run();
-        */
 
 
-        SantaHomePage page = new SantaHomePage();
+/*
+
+        SantaHomePage page = new SantaHomePage(new OrdersManager(true));
         page.run();
-
-
+*/
 
 
 

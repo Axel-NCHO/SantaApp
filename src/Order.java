@@ -1,15 +1,24 @@
+import java.io.Serial;
 import java.io.Serializable;
 
 import java.util.ArrayList;
 
+/**
+ * <h1>Order</h1>
+ * Represents an order.*/
 public class Order implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1286242683;
     public final Integer MAX_NB_TOYS = 5;
+
+    /* Current number of toys in this order */
     private Integer nbToysInOrder = 0;
 
     private Child owner;
     private String message;
     private OrderState state;
+
+    /* Current list of toys in this order */
     private ArrayList<Toy> toys;
 
     public Order (Child owner, String msg, OrderState stateOfOrder, ArrayList<Toy> toysInOrder){
@@ -29,14 +38,20 @@ public class Order implements Serializable {
         }
     }
 
+    /**
+     * @return the message written by a {@link Child}.*/
     public String getMessage() {
         return message;
     }
 
+    /**
+     * @return the {@link Child} that made this {@link Order}.*/
     public Child getOwner() {
         return this.owner;
     }
 
+    /**
+     * @return the state of this {@link Order}.*/
     public OrderState getState(){
         return this.state;
     } 
@@ -53,14 +68,20 @@ public class Order implements Serializable {
         this.state = state;
     }
 
+    /**
+     * Remove a {@link Toy} form this order.*/
     public void removeToy(Toy toy){
         this.toys.remove(toy);
     }
 
+    /**
+     * @return the current list of toys in this {@link Order}.*/
     public ArrayList<Toy> getToys() {
         return toys;
     }
 
+    /**
+     * Save an {@link Order} in the database.*/
     public void save() {
         FileHelper.export("AppDataBase/Orders.santaDB/Ongoing/" + this.getOwner().getEmail().toString(),this);
     }

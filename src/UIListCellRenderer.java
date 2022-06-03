@@ -2,6 +2,9 @@ import javax.swing.DefaultListCellRenderer;
 import javax.swing.JList;
 import java.awt.Component;
 
+/**
+ * <h1>UIListCellRenderer</h1>
+ * Customized {@link javax.swing.ListCellRenderer} for {@link JList} component.*/
 public class UIListCellRenderer extends DefaultListCellRenderer {
 
     @Override

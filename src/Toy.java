@@ -1,12 +1,26 @@
 import java.io.File;
+import java.io.Serial;
 import java.io.Serializable;
 
+/**
+ * <h1>Toy</h1>
+ * Represents a toy.
+ * A toy has a name and an age range.*/
 public class Toy implements Serializable {
-    private static final long serialVersionUID = 794993212;	
+    @Serial
+    private static final long serialVersionUID = 794993212;
+
+    /* Name of a toy */
     private String name;
+
+    /* The minimal age for a child to have this toy */
     private Integer minimalAge;
+
+    /* The maximal age for a child to have this toy */
     private Integer maximalAge;
 
+    /**
+     * Create a new {@link Toy} and save it in the database.*/
     public Toy (String name, Integer minAge, Integer maxAge){
 
         this.name = name;
@@ -15,6 +29,8 @@ public class Toy implements Serializable {
         this.save();
     }
 
+    /**
+     * Load an existing {@link Toy} from database.*/
     public Toy (String name){//memory loading version
         this.name = name;
         File toyDir = new File(FileHelper.getAppPath() + "AppDataBase/Toys.santaDB");
@@ -26,7 +42,7 @@ public class Toy implements Serializable {
             i++;
         }
         if(loadedToy == null){
-            System.out.println("Erreur lors du chargement du jouet " + name);
+            System.out.println("Error while loading the toy " + name);
         }
         else{
             this.minimalAge = loadedToy.minimalAge;
@@ -59,6 +75,8 @@ public class Toy implements Serializable {
         return this.getName();
     }
 
+    /**
+     * Save a {@link Toy} in the database.*/
     private void save(){
         FileHelper.export("AppDataBase/Toys.santaDB/"+minimalAge.toString()+"-"+maximalAge.toString()+"/"+this.getName(), this);
     }

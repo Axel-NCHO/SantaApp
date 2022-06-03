@@ -8,20 +8,54 @@ import javax.swing.border.LineBorder;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * <h1>NewChildHomePage</h1>
+ * Page on wich a {@link Child} can choose toys and send his/her order to Santa.
+ * <hr>
+ *
+ * Split into 3 main panels :
+ *
+ * <ul><li>ToysPanel</li>
+ * Implements a {@link GridLayout}.
+ * It is the panel for choosing toys. This panel contains 3 sub-panels:
+ * <ul><li>FirstToysRow</li>
+ * It displays available toys that match the child's age.
+ * <li>SecondToysRow</li>
+ * It displays how many toys are selected and the maximal number of
+ * toys allowed.
+ * <li>ThirdToysRow</li>
+ * It displays an image.</ul>
+ *
+ * <li>MessagePanel</li>
+ * Containds a {@link UITextArea} that can be used by a {@link Child} to
+ * write a message.
+ *
+ * <li>SendButtonPanel</li>
+ * Contains the button used to send the {@link Order}.
+ * </ul>
+ *
+ * After sending the order, the child is redirected to a new {@link ExistingChildHomePage}
+ * where he/she can access a quick resume of the order.
+ * <hr>*/
 public class NewChildHomePage extends UIPage {
 
+    /* Panel for toys list and scroll bar */
     private JPanel firstToysRow;
+
+    /* Panel to display the number of toys chosen and the max number of toys per order */
     private JPanel secondToysRow;
+
+    /* Panel for an image */
     private JPanel thirdToysRow;
     private DefaultListModel<Toy> listModel = new DefaultListModel<Toy>();
-    private JList<Toy> listOfAvailableToys = new JList<Toy>(listModel); // Corresponding to the age of the child
+    private JList<Toy> listOfAvailableToys = new JList<Toy>(listModel); // The toys correspond to the age of the child
     private JScrollPane scrollPaneForToysList = new JScrollPane();
-    private SynchronizedUITextField nbChoosenToys = new SynchronizedUITextField(false); //
+    private SynchronizedUITextField nbChosenToys = new SynchronizedUITextField(false); //
     private UITextField nbMaxToys = new UITextField();
     private UITextArea message = new UITextArea();
     private JButton sendButton = new JButton();
     private Child child; // We need to know the age of the child so that we can suggest toys of his/her age.
-                         // We also need to know whose order ii is.
+                         // We also need to know whose order it is.
 
     public NewChildHomePage(Child child){
         super("Commande tes cadeaux " + child.getLastName());
@@ -45,6 +79,8 @@ public class NewChildHomePage extends UIPage {
         return toysPanel;
     }
 
+    /**
+     * Create the scroll panel for displaying the loaded toys.*/
     private void configFirstToysRow() {
         this.firstToysRow = new JPanel();
         this.firstToysRow.setBackground(UI_BG_COLOR);
@@ -58,8 +94,10 @@ public class NewChildHomePage extends UIPage {
         this.firstToysRow.add(this.scrollPaneForToysList);
     }
 
+    /**
+     * Load the toys that correpond to the child's age from the database.*/
     private void fillListOfAvailableToys(){
-        Integer minAge = 0, maxAge = 3;
+        int minAge = 0, maxAge = 3;
 
         if (4 <= child.getAge() && child.getAge() <= 7){
             minAge = 4;maxAge = 7;
@@ -73,28 +111,29 @@ public class NewChildHomePage extends UIPage {
         if (16 <= child.getAge() && child.getAge() <= 18){
             minAge = 16;maxAge = 18;
         }
-        String toysFolder = "AppDataBase/Toys.santaDB/" + minAge.toString() + "-" + maxAge.toString();
+        String toysFolder = "AppDataBase/Toys.santaDB/" + Integer.toString(minAge) + "-" + Integer.toString(maxAge);
         String [] toysList = new File(toysFolder).list();
-        for (String toy : toysList){
-            this.listModel.addElement((Toy)FileHelper.load(toysFolder +"/" + toy));
+        if (toysList != null) {
+            for (String toy : toysList){
+                this.listModel.addElement((Toy)FileHelper.load(toysFolder +"/" + toy));
+            }
         }
     }
 
+    /**
+     * Fields for displaying nbChosenToys and MAX_NB_TOYS_PER_ORDER.*/
     private void configSecondToysRow() {
         this.secondToysRow = new JPanel();
         this.secondToysRow.setBackground(UI_BG_COLOR);
         this.secondToysRow.setBorder(new EmptyBorder(150, 10, 150, 0));
         this.secondToysRow.setLayout(new BoxLayout(this.secondToysRow, BoxLayout.Y_AXIS));
+
         this.secondToysRow.add(new UILabel("Nombre de jouets choisis"));
-        this.nbChoosenToys.setBackground(UI_TEXTFIELD_COLOR);
-        this.nbChoosenToys.setBorder(new LineBorder(UI_BORDER_COLOR, 1, true));
-        this.nbChoosenToys.setEditable(false);
-        /*try {
-            this.nbChoosenToys.setText(Integer.toString(this.listOfAvailableToys.getSelectedIndices().length));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
-        this.secondToysRow.add(this.nbChoosenToys);
+        this.nbChosenToys.setBackground(UI_TEXTFIELD_COLOR);
+        this.nbChosenToys.setBorder(new LineBorder(UI_BORDER_COLOR, 1, true));
+        this.nbChosenToys.setEditable(false);
+        this.secondToysRow.add(this.nbChosenToys);
+
         this.secondToysRow.add(new UILabel("Nombre maximal de jouets autorisé"));
         this.nbMaxToys.setBackground(UI_TEXTFIELD_COLOR);
         this.nbMaxToys.setBorder(new LineBorder(UI_BORDER_COLOR, 1, true));
@@ -103,6 +142,8 @@ public class NewChildHomePage extends UIPage {
         this.secondToysRow.add(this.nbMaxToys);
     }
 
+    /**
+     * Field for an image.*/
     private void configThirdToysRow() {
         this.thirdToysRow = new JPanel();
         this.thirdToysRow.setBackground(UI_BG_COLOR);
@@ -132,26 +173,32 @@ public class NewChildHomePage extends UIPage {
         JPanel sendButtonPanel = new JPanel();
         sendButtonPanel.setBackground(UI_BG_COLOR);
         sendButtonPanel.setBorder(new EmptyBorder(40, 10, 50, 10));
-        //sendButtonPanel.setLayout(new BorderLayout());
         this.sendButton.setText("Envoyer ma commande au Père Noël");
         this.sendButton.addActionListener(new UIActionListener(this));
         sendButtonPanel.add(this.sendButton/*, BorderLayout.NORTH*/);
         return sendButtonPanel;
     }
 
-    public SynchronizedUITextField getNbChoosenToys() {
-        return this.nbChoosenToys;
+    /**
+     * @return Field that indicates the how many toys have been chosen.*/
+    public SynchronizedUITextField getNbChosenToys() {
+        return this.nbChosenToys;
     }
 
-    public JList getListOfAvailableToys() {
+    /**
+     * @return List that contains all the displayed toys.*/
+    public JList<Toy> getListOfAvailableToys() {
         return this.listOfAvailableToys;
     }
 
-
+    /**
+     * @return {@link Child} owner of this page.*/
     public Child getChild() {
         return this.child;
     }
 
+    /**
+     * @return {@link UITextArea} field that contains the message.*/
     public UITextArea getMessage() {
         return this.message;
     }

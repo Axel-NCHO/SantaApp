@@ -5,8 +5,15 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+/**
+ * <h1>File helper</h1>
+ * File manager*/
 public class FileHelper {
-    private static String appPath = "/home/paul/Documents/java/SantaAppProject/"; //modifier pour changer le chemin de l'application
+    /* Path to the working repository.
+    *  Must be modified depending on the operating system.
+    *  On Windows, it's an empty string.
+    *  On Linux, it's the absolute path to the working repository.*/
+    private static String appPath = "";
 
     public static String getAppPath(){
         return appPath;
@@ -16,37 +23,47 @@ public class FileHelper {
         appPath = newAppPath;
     }
 
-
-    public static void export(String path, Object obj) { //crée ou modifie un fichier en sérialisant l'objet passé en paramètre à l'emplacement spécifié
+    /**
+     * Save a specified object on hard drive at the specified path by serializing it.
+     * @param path the {@link String} path where the object should be saved.
+     * @param obj the {@link Object} to be saved.*/
+    public static void export(String path, Object obj) {
         try {
             File fichier = new File (appPath + path);
             if(!fichier.exists()){
                 if(!fichier.createNewFile()){
-                    System.out.println("erreur lors de la création de " + path);
+                    System.out.println("Error while creating " + path);
                 }
             }
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(appPath + path));
             oos.writeObject(obj);
             oos.close();
         } catch(IOException e){
-            System.out.println("erreur détectée");
+            System.out.println("An error has occurred");
             e.printStackTrace();
         }
     }
-    
-    public static void remove(String path){ // supprime le fichier de chemin passé en paramètre
+
+    /**
+     * Remove a specified file from hard drive.
+     * @param path the {@link String} path to the file.*/
+    public static void remove(String path){
         File fichier = new File(appPath + path);
         if(fichier.exists()){
             if(!fichier.delete()){
-                System.out.println("Erreur lors de la suppression de " + path);
+                System.out.println("Error while suppressing " + path);
             }
         }
         else{
-            System.out.println("le fichier " + path + " n'existe pas");
+            System.out.println("The file " + path + " does not exist.");
         }
     }
 
-    public static Object load(String path){ //renvoie l'objet issu de la désérialisation du fichier de chemin passé en paramètre
+    /**
+     * Load a specified object from hard drive at the specified path by deserializing it.
+     * @param path the {@link String} path to the object.
+     * @return the {@link Object} loaded. The type of this object shold be converted to the real one.*/
+    public static Object load(String path){
         Object obj = null;
         if(new File(appPath + path).exists()){
             try {
@@ -60,14 +77,17 @@ public class FileHelper {
                 }
                 oos.close();
             } catch(IOException e){
-                System.out.println("erreur détectée");
+                System.out.println("An error has occurred.");
                 e.printStackTrace();
             }
         }
         return obj;
     }
 
-    public static String[] fileList(String path){ // renvoie la liste des fichiers dans le répertoire de chemin passé en paramètre
+    /**
+     * @param path the path to a repository.
+     * @return the list of the files in the specified repository.*/
+    public static String[] fileList(String path){
         return new File(appPath + path).list();
     }
 }

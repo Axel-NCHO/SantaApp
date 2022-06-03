@@ -3,19 +3,50 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
+/**
+ * <h1>Registration Page</h1>
+ * Page used by a {@link Child} to register.
+ * <hr>
+ * Splitted into 2 main panels :
+ *
+ * <ul><li>personnalInfosPanel</li>
+ * For all the personal informations (name, age, ...). It implements a {@link GridLayout}.
+ *
+ * <li>submitButtonPanel</li>
+ * For the submit button.</ul>
+ *
+ * If all the required fields are filled and valid, the child is redirected to a
+ * {@link NewChildHomePage} to compose his/her order.
+ * <hr>*/
 public class RegistrationPage extends UIPage {
 
+    /* Field for last name */
     private UITextField lastName = new UITextField();
+
+    /* Field for first name */
     private UITextField firstName = new UITextField();
+
+    /* Field for e-mail */
     private UITextField email = new UITextField();
+
+    /* Field for neighborhood */
     private UITextField age = new UITextField();
+
+    /* Field for password */
     private UITextField pwd = new UITextField();
+
+    /* Field for age */
     private UITextField dateOfBirth = new UITextField();
+
+    /* Field for city */
     private UITextField city = new UITextField();
+
+    /* Field for country */
     private UITextField country = new UITextField();
     private JPanel nameEmailAndBirthPanel;
     private JPanel agePwdAndAddressPanel;
     private JButton submitButton = new JButton();
+
 
     public RegistrationPage(){
         super("Crée ton compte !");
@@ -54,7 +85,6 @@ public class RegistrationPage extends UIPage {
 
     }
 
-
     private void configAgeAndPasswordPanel(){
         this.agePwdAndAddressPanel = new JPanel();
         this.agePwdAndAddressPanel.setBorder(new EmptyBorder(150, 60, 130, 60));
@@ -84,31 +114,43 @@ public class RegistrationPage extends UIPage {
         submitButton.setOpaque(true);
         submitButton.setBorderPainted(false);
         this.submitButton.addActionListener(new UIActionListener(this));
-        submitButtonPanel.add(this.submitButton/*, BorderLayout.NORTH*/);
+        submitButtonPanel.add(this.submitButton);
         return submitButtonPanel;
 
     }
-
+    /**
+     * @return Field that contains a child's first name.*/
     public UITextField getFirstName() {
         return this.firstName;
     }
 
+    /**
+     * @return Field that contains a child's last name.*/
     public UITextField getLastName() {
         return this.lastName;
     }
 
+    /**
+     * @return Field that contains a child's e-mail.*/
     public UITextField getEmail(){
         return this.email;
     }
 
+    /**
+     * @return Field that contains a child's password.*/
     public UITextField getPassword(){
         return this.pwd;
     }
 
+    /**
+     * @return Field that contains a child's age.*/
     public UITextField getAge(){
         return this.dateOfBirth;
     }
 
+    /**
+     * @return A child's address. It is the concatenation of the fields
+     * neighborhood, city and country.*/
     public String getAddress(){
         return age.getText() + " " + city.getText() + ", " + country.getText();
     }
