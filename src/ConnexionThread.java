@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class ConnexionThread extends Thread {
 
@@ -12,13 +14,28 @@ public class ConnexionThread extends Thread {
     public void run() {
         if (new Email(page.getEmail().getText()).isValidEmail()) {
             OrdersManager manager = new OrdersManager(true);
-            if (page.getEmail().getText().endsWith("@elf.com")) {}
-            else if (page.getEmail().getText().equals("santa@santa.com")) {
-                Santa santa = (Santa) FileHelper.load("AppDataBase/UsersFiles.santaDB/santa@santa.com");
-                if (santa.getPassword().equals(page.getPwd().getText())) {
+            if (page.getEmail().getText().endsWith("@pelf.com")) {
+                PackagingElf elf = new PackagingElf(new Email(page.getEmail().getText()));
+                if (elf.getPassword().equals(page.getPwd().getText())) {
+                    elf.setOrdersManager(manager);
                     new Thread() {
                         public void run() {
-                            SantaHomePage santaHomePage = new SantaHomePage(manager);
+                            PackagingElfHomePage packagingElfHomePage = new PackagingElfHomePage(elf);
+                            packagingElfHomePage.run();
+                        }
+                    }.start();
+                    new CloseWindowThread(page).start();
+                } else {
+                    JOptionPane.showMessageDialog(page, "Mot de passe incorrect.", "Erreur", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+            else if (page.getEmail().getText().equals("santa@santa.com")) {
+                Santa santa = new Santa(new Email("santa@santa.com"));
+                if (santa.getPassword().equals(page.getPwd().getText())) {
+                    santa.setOrdersManager(manager);
+                    new Thread() {
+                        public void run() {
+                            SantaHomePage santaHomePage = new SantaHomePage(santa);
                             santaHomePage.run();
                         }
                     }.start();
@@ -69,7 +86,11 @@ public class ConnexionThread extends Thread {
                             } while (i < manager.getPreparedOrders().size());
                         }
                         if (order == null) {
-                            JOptionPane.showMessageDialog(page, "Utilisateur inconnu.", "Erreur", JOptionPane.ERROR_MESSAGE);
+                            if (Arrays.toString(FileHelper.fileList("AppDataBase/UsersFiles.santaDB")).contains(page.getEmail().getText())) {
+                                JOptionPane.showMessageDialog(page, "Commande supprimée.");
+                            } else {
+                                JOptionPane.showMessageDialog(page, "Utilisateur inconnu", "Erreur", JOptionPane.ERROR_MESSAGE);
+                            }
                         }
                     }
                 }

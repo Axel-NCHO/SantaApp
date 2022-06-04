@@ -26,18 +26,20 @@ public class Test {
         RegistrationPage page = new RegistrationPage();
         page.run();
 */
-
+/*
         ConnexionPage copage = new ConnexionPage();
         copage.run();
-
+*/
 
 /*
 
         SantaHomePage page = new SantaHomePage(new OrdersManager(true));
         page.run();
 */
-
-
-
+        /*
+        Email mail = new Email("santa@santa.com");
+        Santa santa = new Santa("santa", "santa", mail, "hohoho!");
+*/
+        PackagingElf elf = new PackagingElf("pElf1", "pElf1", new Email("pelf1@pelf.com"), "pElf1", EmploymentStatus.RECRUITED);
     }
 }

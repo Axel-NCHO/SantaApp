@@ -4,7 +4,7 @@
 public abstract class Elf extends User{
 
     /* The employment status of an elf */
-    private EmploymentStatus status;
+    protected EmploymentStatus status;
 
     /**
      * Create a new elf.*/
@@ -27,6 +27,10 @@ public abstract class Elf extends User{
 
     public void setEmploymentStatus(EmploymentStatus newStatus){
         status = newStatus;
+    }
+
+    public EmploymentStatus getEmploymentStatus() {
+        return this.status;
     }
 
     @Override

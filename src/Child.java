@@ -36,6 +36,7 @@ public class Child extends User {
         this.age = loadedChild.getAge();
         this.address = loadedChild.getAddress();
         this.hasOrdered = loadedChild.getHasOrdered();
+        this.gentleness = loadedChild.getGentleness();
     }
 
     /**

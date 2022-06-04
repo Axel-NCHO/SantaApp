@@ -31,6 +31,22 @@ public class Order implements Serializable {
         this.save();
     }
 
+    /**
+     * Load an existing order from database.*/
+    public Order (Email mail, OrderState state) {
+        String orderPath = "AppDataBase/Orders.santaDB/";
+        Order loadedOrder = null;
+        switch (state) {
+            case ONGOING -> loadedOrder = (Order) FileHelper.load(orderPath + "Ongoing/" + mail.toString());
+            case VALIDATED -> loadedOrder = (Order) FileHelper.load(orderPath + "Validated/" + mail.toString());
+            case PREPARED -> loadedOrder = (Order) FileHelper.load(orderPath + "Ready/" + mail.toString());
+        }
+        this.owner = loadedOrder.getOwner();
+        this.message = loadedOrder.getMessage();
+        this.state = loadedOrder.getState();
+        this.toys = loadedOrder.getToys();
+    }
+
     public void addToy(Toy toy){
         if (this.nbToysInOrder < this.MAX_NB_TOYS){
             this.toys.add(toy);

@@ -17,12 +17,13 @@ public class PackagingElf extends Elf {
      * Load an existing {@link PackagingElf} from database.*/
     public PackagingElf (Email mail){
         super(mail);
-        PackagingElf loadedElf = (PackagingElf) FileHelper.load("/home/paul/Documents/java/SantaAppProject/AppDataBase/UsersFiles.santaDB/" + mail.toString());
+        PackagingElf loadedElf = (PackagingElf) FileHelper.load("AppDataBase/UsersFiles.santaDB/" + mail.toString());
         super.setFirstName(loadedElf.getFirstName());
         super.setLastName(loadedElf.getLastName());
         super.setPassword(loadedElf.getPassword());
         super.setEmploymentStatus(loadedElf.getStatus());
-        this.ordersManager = loadedElf.getOrdersManager();
+        this.status = loadedElf.getEmploymentStatus();
+
     }
 
     public void setOrdersManager(OrdersManager manager){

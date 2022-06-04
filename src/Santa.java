@@ -19,6 +19,16 @@ public class Santa extends User {
         this.save();
     }
 
+    public Santa (Email mail) {
+        super(mail);
+        Santa santaLoaded = (Santa) FileHelper.load("AppDataBase/UsersFiles.santaDB/" + mail.toString());
+        this.setFirstName(santaLoaded.getFirstName());
+        this.setLastName(santaLoaded.getLastName());
+        this.setPassword(santaLoaded.getPassword());
+        this.ordersManager = santaLoaded.getOrdersManager();
+        this.reinderCare = santaLoaded.getReinderCare();
+    }
+
     public void setOrdersManager(OrdersManager manager){
         this.ordersManager = manager;
     }

@@ -2,48 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84afeec7-9556-42db-95a6-7bc41606407a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Validated/ammmm@gmail.com" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Validated/nax@gmail.com" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/ammmm@gmail.com" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/manu@gmail.com" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/nax@gmail.com" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/santa@santa.com" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FindOrderByEmailThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test10@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test11@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test12@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test13@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test14@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test15@mail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test16@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test17@mail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test1@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test2@mail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test3@mail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test4@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test5@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test6@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test7@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test8@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/test9@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/pelf1@pelf.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test10@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test12@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test13@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test14@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test15@mail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test16@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test17@mail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test18@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test1@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test2@mail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test3@mail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test4@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test5@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test6@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test7@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test8@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test9@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OrderCancellationThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OrderValidationThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PackagingElfHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ongoing/naxelamour09@gmail.com" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ongoing/prevel@enssat.fr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ongoing/yann@gmail.com" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/naxelamour09@gmail.com" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/prevel@enssat.fr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/yann@gmail.com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Validated/ammmm@gmail.com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Validated/const@fembmail.to" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Validated/manu@gmail.com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Validated/nax@gmail.com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/ammmm@gmail.com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/const@fembmail.to" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/manu@gmail.com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/nax@gmail.com" beforeDir="false" afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test11@gmail.com" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/santa@santa.com" beforeDir="false" afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/santa@santa.com" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AccountCreationThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccountCreationThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Child.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Child.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CloseWindowThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CloseWindowThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConnexionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConnexionPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ConnexionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConnexionThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Email.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EmploymentStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmploymentStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ExistingChildHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExistingChildHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gentleness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gentleness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MedElf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MedElf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewChildHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewChildHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewChildThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewChildThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FindOrderByEmailThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FindOrderByEmailThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OrderCheckingThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderCheckingThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OrderSubmissionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderSubmissionThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrdersManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrdersManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RegistrationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegistrationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PackagingElf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PackagingElf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Santa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Santa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SantaHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SantaHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UIActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UIPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/validationDialog.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +106,14 @@
       <recent name="C:\Users\naxel\OneDrive\Desktop\Folder\JavaEnssat\ProjetSanta\.idea" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Projet_Java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test" />
       <module name="Projet_Java" />
@@ -95,6 +123,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>

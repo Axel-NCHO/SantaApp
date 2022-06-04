@@ -14,20 +14,29 @@ public class FindOrderByEmailThread extends Thread {
     }
 
     public void run() {
-        SantaHomePage santaPage = null;
         if (page instanceof SantaHomePage) {
-             santaPage = (SantaHomePage) page;
-        }
-        if (santaPage != null) {
+            SantaHomePage santaPage = (SantaHomePage) page;
             for (Component panel : santaPage.getContentPanel().getComponents()) {
                 if (panel.isVisible()) {
                     childEmail = panel.getName();
+                    break;
                 }
             }
         }
+
+        if (page instanceof PackagingElfHomePage) {
+            PackagingElfHomePage packagingElfPage = (PackagingElfHomePage) page;
+            for (Component panel : packagingElfPage.getContentPanel().getComponents()) {
+                if (panel.isVisible()) {
+                    childEmail = panel.getName();
+                    break;
+                }
+            }
+        }
+
     }
     public String startThread() {
-        start();
+        run();
         return childEmail;
     }
 }

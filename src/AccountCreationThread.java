@@ -37,7 +37,7 @@ public class AccountCreationThread extends Thread {
      * Start the thread.
      * @return the {@link Child} object created.*/
     public Child startThread(){
-        this.start();
+        this.run();
         return this.child;
     }
 

@@ -49,6 +49,7 @@ public class ExistingChildHomePage extends UIPage {
 
     public ExistingChildHomePage(Child owner){
         super("Consultes ta commnde " + owner.getEmail().toString() + " !");
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.owner = owner;
         this.getContentPane().setLayout(new GridLayout(1, 2));
         this.getContentPane().add(createOrderPanel());

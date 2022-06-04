@@ -37,7 +37,7 @@ public class OrderSubmissionThread extends Thread implements UiFinals{
     }
 
     public Order startThread() {
-        start();
+        run();
         return this.order;
     }
 }

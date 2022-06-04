@@ -10,16 +10,16 @@ public abstract class User implements Serializable {
     private static final long serialVersionUID = 344120892;
 
     /* The first name of the user */
-    private String firstName;
+    protected String firstName;
 
     /* The last name of the user */
-    private String lastName;
+    protected String lastName;
 
     /* The e-mail of the user */
-    private Email email;
+    protected Email email;
 
     /* The password of the user */
-    private String password;
+    protected String password;
 
     /**
      * Create a new {@link User}.*/
@@ -38,7 +38,8 @@ public abstract class User implements Serializable {
     }
 
     /**
-     * Must be used for loading an existing {@link User}.*/
+     * Must be used for loading an existing {@link User}. This method affects the value
+     * of e-mail without modifying the database.*/
     public User(Email mail){
         email = mail;
     }

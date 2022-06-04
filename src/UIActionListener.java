@@ -94,37 +94,50 @@ public class UIActionListener implements ActionListener {
                     page.getCardLayoutForContentPanel().next(page.getContentPanel());
                     break;
                 case "Valider" :
-                    // Find the right order to validate or cancel by using the child's email
-                    // because the cards in contentPanel have child's emails as name
-                    String childEmail = new FindOrderByEmailThread(page).startThread();
-
-                    // remove toys not selected by santa
-                    for (Order order : page.getOrdersManager().getReceivedOrders()) {
-                        if (order.getOwner().getEmail().toString().equals(childEmail)) {
-                            for (JCheckBox checkBox : page.getValidatedToys()) {
-                                if (!checkBox.isSelected()) {
-                                    page.getOrdersManager().removeToy(order, new Toy(checkBox.getText()));
-                                }
-                            }
-                            if (order.getToys().size() != 0) {
-                                // move order file to valid orders repo
-                                page.getOrdersManager().setValid(order);
-                                JOptionPane.showMessageDialog(page, "Commande validée.");
-                            } else {
-                                JOptionPane.showMessageDialog(page, "Il semble que vous n'ayez sélectionné aucun jouet.\n"+
-                                        "Si ce n'est pas une erreur, veuillez utiliser le bouton\n"+
-                                        "'Annuler la commnde' pour annuler la commande","Erreur", JOptionPane.ERROR_MESSAGE);
-                            }
-                        }
-                    }/*
-                    JPanel panelToErase = new JPanel();
-                    panelToErase.setName(childEmail);
-                    page.getCardLayoutForContentPanel().removeLayoutComponent(panelToErase);*/
+                    new OrderValidationThread(page).start();
                     break;
                 case "Annuler la commande" :
+                    new OrderCancellationThread(page).start();
                     break;
             }
 
+        }
+
+        if (page instanceof PackagingElfHomePage) {
+            PackagingElfHomePage page = (PackagingElfHomePage) this.page;
+            switch (e.getActionCommand()) {
+                case "Précédent":
+                    page.getCardLayoutForContentPanel().previous(page.getContentPanel());
+                    break;
+                case "Suivant":
+                    page.getCardLayoutForContentPanel().next(page.getContentPanel());
+                    break;
+                case "Valider":
+                    // Find the right order to validate by using the child's email
+                    // because each card in contentPanel has a child's emails as name
+                    String childEmail = new FindOrderByEmailThread(page).startThread();
+
+                    // Search the right order to validate
+                    Order order = null;
+                    int i = 0; // iterator
+                    do {
+                        order = page.getPackagingElf().getOrdersManager().getValidOrders().get(i);
+                        if (order.getOwner().getEmail().toString().equals(childEmail)) {
+                            break;
+                        }
+                        order = null;
+                        i++;
+                    } while (i < page.getPackagingElf().getOrdersManager().getValidOrders().size());
+                    if (order != null) {
+                        page.getPackagingElf().getOrdersManager().setPrepared(order);
+                        JOptionPane.showMessageDialog(page, "Commande prête pour la livraison.");
+                        page.stopDisplayingOrder(order);
+                    } else {
+                        JOptionPane.showMessageDialog(page, "Un autre lutin a déjà validé cette commande.");
+                        page.stopDisplayingOrder(order);
+                    }
+                    break;
+            }
         }
 
     }
