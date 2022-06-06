@@ -64,6 +64,7 @@ public class ConnexionPage extends UIPage {
         this.emailPanel.setLayout(new BoxLayout(this.emailPanel, BoxLayout.Y_AXIS));
         this.emailPanel.add(new UILabel("Connectes-toi à ton compte !"));
         this.emailPanel.add(new UILabel("Email :"));
+        this.email.addKeyListener(this);
         this.emailPanel.add(this.email);
     }
 
@@ -74,6 +75,7 @@ public class ConnexionPage extends UIPage {
         this.pwdPanel.setLayout(new BoxLayout(this.pwdPanel, BoxLayout.Y_AXIS));
         this.pwdPanel.add(new UILabel("      "));
         this.pwdPanel.add(new UILabel("Mot de passe :"));
+        this.pwd.addKeyListener(this);
         this.pwdPanel.add(this.pwd);
     }
 
@@ -82,6 +84,10 @@ public class ConnexionPage extends UIPage {
         buttonsPanel.setBorder(new EmptyBorder(10, 60, 80, 60));
         buttonsPanel.setBackground(UI_BG_COLOR);
         this.connexionButton.setText("Je me connecte !");
+        this.connexionButton.setBackground(UI_BG_COLOR_2);
+        this.connexionButton.setForeground(UI_TEXT_COLOR);
+        this.connexionButton.setOpaque(true);
+        this.connexionButton.setBorderPainted(false);
         this.connexionButton.addActionListener(new UIActionListener(this));
         this.registrationButton.setText("Je crée un compte !");
         this.registrationButton.addActionListener(new UIActionListener(this));
@@ -111,6 +117,9 @@ public class ConnexionPage extends UIPage {
 
     @Override
     public void keyPressed(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_ENTER){
+            this.connexionButton.doClick();
+        }
 
     }
 

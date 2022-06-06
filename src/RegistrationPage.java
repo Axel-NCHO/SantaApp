@@ -75,13 +75,17 @@ public class RegistrationPage extends UIPage {
         this.nameEmailAndBirthPanel.setLayout(new BoxLayout(this.nameEmailAndBirthPanel, BoxLayout.Y_AXIS));
         this.nameEmailAndBirthPanel.add(new UILabel("Crée ton compte !"));
         this.nameEmailAndBirthPanel.add(new UILabel("Nom * :"));
+        this.firstName.addKeyListener(this);
         this.nameEmailAndBirthPanel.add(this.firstName);
         this.nameEmailAndBirthPanel.add(new UILabel("Prénom * :"));
         this.nameEmailAndBirthPanel.add(this.lastName);
+        this.lastName.addKeyListener(this);
         this.nameEmailAndBirthPanel.add(new UILabel("Adresse mail * : "));
         this.nameEmailAndBirthPanel.add(this.email);
-        this.nameEmailAndBirthPanel.add(new UILabel("Age : "));
-        this.dateOfBirth.setText("Ex : 6");
+        this.email.addKeyListener(this);
+        this.nameEmailAndBirthPanel.add(new UILabel("Age (Ex : 8) : "));
+        this.dateOfBirth.setText("0");
+        this.dateOfBirth.addKeyListener(this);
         this.nameEmailAndBirthPanel.add(this.dateOfBirth);
 
     }
@@ -93,12 +97,16 @@ public class RegistrationPage extends UIPage {
         this.agePwdAndAddressPanel.setLayout(new BoxLayout(this.agePwdAndAddressPanel, BoxLayout.Y_AXIS));
         this.agePwdAndAddressPanel.add(new UILabel("    "));
         this.agePwdAndAddressPanel.add(new UILabel("Rue :"));
+        this.age.addKeyListener(this);
         this.agePwdAndAddressPanel.add(this.age);
         this.agePwdAndAddressPanel.add(new UILabel("Ville :"));
+        this.city.addKeyListener(this);
         this.agePwdAndAddressPanel.add(this.city);
         this.agePwdAndAddressPanel.add(new UILabel("Pays :"));
+        this.country.addKeyListener(this);
         this.agePwdAndAddressPanel.add(this.country);
         this.agePwdAndAddressPanel.add(new UILabel("Nouveau mot de passe * :"));
+        this.pwd.addKeyListener(this);
         this.agePwdAndAddressPanel.add(this.pwd);
 
     }
@@ -106,9 +114,7 @@ public class RegistrationPage extends UIPage {
     private JPanel createButtonsPanel(){
         JPanel buttonsPanel = new JPanel();
         buttonsPanel.setBorder(new EmptyBorder(10, 60, 10, 60));
-        //submitButtonPanel.setBounds(0, 100, 100, 50);
         buttonsPanel.setBackground(UI_BG_COLOR);
-        //submitButtonPanel.setLayout(new BorderLayout());
 
         this.submitButton.setText("Soumettre");
         submitButton.setBackground(UI_BG_COLOR_2);
@@ -175,7 +181,9 @@ public class RegistrationPage extends UIPage {
 
     @Override
     public void keyPressed(KeyEvent e) {
-
+        if(e.getKeyCode() == KeyEvent.VK_ENTER){
+            this.submitButton.doClick();
+        }
     }
 
     @Override
