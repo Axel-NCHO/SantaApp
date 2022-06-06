@@ -1,5 +1,6 @@
 /**
  * <h1>Santa App</h1>
+ * @author Axel N'CHO & Paul REVEL - INFO 1 - ENSSAT
  * <hr>
  *<p> It's a software where children can build a whishlist of available toysnto a certain
  * amount a send it to Santa Claus. </p>
