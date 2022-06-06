@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
  * It performs different actions depending on where it is called.*/
 public class UIActionListener implements ActionListener {
 
-    private UIPage page;
+    private final UIPage page;
 
     public UIActionListener(UIPage page){
         this.page = page;
@@ -22,11 +22,30 @@ public class UIActionListener implements ActionListener {
 
         /* Action performed if the calling component is on a registration page */
         if (this.page instanceof RegistrationPage){
-            AccountCreationThread thread = new AccountCreationThread((RegistrationPage) this.page);
-            Child child = thread.startThread();
-            if(child != null) {
-                new NewChildThread(child).start();
-                new CloseWindowThread(page).start();
+            switch (e.getActionCommand()) {
+                case "Soumettre" :
+                    AccountCreationThread thread = new AccountCreationThread((RegistrationPage) this.page);
+                    User user = thread.startThread();
+                    if (user != null) {
+                        if (user instanceof Child) {
+                            Child child = (Child) user;
+                            new NewChildThread(child).start();
+                        } else {
+                            new ConnexionPage().run();
+                        }
+                        new CloseWindowThread(page).start();
+                    }
+                    break;
+                case "Je me connecte !" :
+                    new Thread() {
+                        @Override
+                        public void run() {
+                            ConnexionPage connexionPage = new ConnexionPage();
+                            connexionPage.run();
+                        }
+                    }.start();
+                    new CloseWindowThread(page).start();
+                    break;
             }
         }
 
@@ -58,9 +77,10 @@ public class UIActionListener implements ActionListener {
 
         /* Action performed if the calling component is on an ExistingChildHomePage */
         if (page instanceof ExistingChildHomePage) {
-            // On veut pouvoir reafficher NewChildHomePage mais contenant déjà la commande de l'enfant
+            // On veut pouvoir re-afficher NewChildHomePage mais contenant déjà la commande de l'enfant
             // ExistingChildHomePage page = (ExistingChildHomePage) this.page;
             // ...
+            JOptionPane.showMessageDialog(page, "Cette fonctionnalité n'est pas encore disponible.", "Désolé !", JOptionPane.ERROR_MESSAGE);
         }
 
         /* Action performed if the calling component is on a SantaHomePage */

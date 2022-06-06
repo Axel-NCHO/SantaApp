@@ -108,7 +108,7 @@ public class NewChildHomePage extends UIPage {
         if (12 <= child.getAge() && child.getAge() <= 15){
             minAge = 12;maxAge = 15;
         }
-        if (16 <= child.getAge() && child.getAge() <= 18){
+        if (16 <= child.getAge() /*&& child.getAge() <= 18*/){
             minAge = 16;maxAge = 18;
         }
         String toysFolder = "AppDataBase/Toys.santaDB/" + Integer.toString(minAge) + "-" + Integer.toString(maxAge);

@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.ArrayList;
 
 /**
  * <h1>AccountCreationThread</h1>
@@ -10,8 +11,7 @@ public class AccountCreationThread extends Thread {
     private final RegistrationPage page;
 
     /* The new child created */
-    private Child child;
-
+    private User user;
     /**
      * Creates a thread for creating a new account.*/
     public AccountCreationThread(RegistrationPage page) {
@@ -25,20 +25,38 @@ public class AccountCreationThread extends Thread {
     public void run() {
         Email mail = new Email(page.getEmail().getText());
         if (mail.isValidEmail() && !page.getFirstName().getText().equals("") && !page.getLastName().getText().equals("")) {
-            Child newChild = new Child(page.getFirstName().getText(), page.getLastName().getText(), mail, page.getPassword().getText(), Integer.parseInt(page.getAge().getText()), page.getAddress(), Gentleness.EXCELLENT_BOY);
-            JOptionPane.showMessageDialog(page, "Compte créé avec succès !");
-            this.child = newChild;
+            if (mail.toString().endsWith("@pelf.com")) {
+                PackagingElf packagingElf = new PackagingElf(page.getFirstName().getText(), page.getLastName().getText(), mail, page.getPassword().getText(), EmploymentStatus.RECRUITED);
+                JOptionPane.showMessageDialog(page, "Compte créé avec succès !");
+                this.user = packagingElf;
+            } else {
+                Gentleness gentleness = chooseRandomGenttleness();
+                Child newChild = new Child(page.getFirstName().getText(), page.getLastName().getText(), mail, page.getPassword().getText(), Integer.parseInt(page.getAge().getText()), page.getAddress(), gentleness);
+                JOptionPane.showMessageDialog(page, "Compte créé avec succès !");
+                this.user = newChild;
+            }
         } else {
             JOptionPane.showMessageDialog(page, "Erreur. Vérifies ta saisie", "Erreur", JOptionPane.ERROR_MESSAGE);
         }
     }
 
+    private Gentleness chooseRandomGenttleness() {
+        ArrayList<Gentleness> gentlenesses = new ArrayList<Gentleness>();
+        gentlenesses.add(Gentleness.EXCELLENT_BOY);
+        gentlenesses.add(Gentleness.NICE_BOY);
+        gentlenesses.add(Gentleness.GOOD_BOY);
+        gentlenesses.add(Gentleness.BAD_BOY);
+
+        int choosenIndice = (int)(Math.random() * 3);
+        return gentlenesses.get(choosenIndice);
+    }
+
     /**
      * Start the thread.
      * @return the {@link Child} object created.*/
-    public Child startThread(){
+    public User startThread(){
         this.run();
-        return this.child;
+        return this.user;
     }
 
 }

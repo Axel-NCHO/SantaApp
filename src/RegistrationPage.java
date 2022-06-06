@@ -46,13 +46,14 @@ public class RegistrationPage extends UIPage {
     private JPanel nameEmailAndBirthPanel;
     private JPanel agePwdAndAddressPanel;
     private JButton submitButton = new JButton();
+    private JButton connectionButton = new JButton();
 
 
     public RegistrationPage(){
         super("Crée ton compte !");
         this.getContentPane().setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
         this.getContentPane().add(createPersonalInformationsPanel());
-        this.getContentPane().add(createSubmitButtonPanel());
+        this.getContentPane().add(createButtonsPanel());
     }
 
     private JPanel createPersonalInformationsPanel(){
@@ -73,11 +74,11 @@ public class RegistrationPage extends UIPage {
         this.nameEmailAndBirthPanel.setBackground(UI_BG_COLOR);
         this.nameEmailAndBirthPanel.setLayout(new BoxLayout(this.nameEmailAndBirthPanel, BoxLayout.Y_AXIS));
         this.nameEmailAndBirthPanel.add(new UILabel("Crée ton compte !"));
-        this.nameEmailAndBirthPanel.add(new UILabel("Nom :"));
+        this.nameEmailAndBirthPanel.add(new UILabel("Nom * :"));
         this.nameEmailAndBirthPanel.add(this.firstName);
-        this.nameEmailAndBirthPanel.add(new UILabel("Prénom :"));
+        this.nameEmailAndBirthPanel.add(new UILabel("Prénom * :"));
         this.nameEmailAndBirthPanel.add(this.lastName);
-        this.nameEmailAndBirthPanel.add(new UILabel("Adresse mail : "));
+        this.nameEmailAndBirthPanel.add(new UILabel("Adresse mail * : "));
         this.nameEmailAndBirthPanel.add(this.email);
         this.nameEmailAndBirthPanel.add(new UILabel("Age : "));
         this.dateOfBirth.setText("Ex : 6");
@@ -97,25 +98,37 @@ public class RegistrationPage extends UIPage {
         this.agePwdAndAddressPanel.add(this.city);
         this.agePwdAndAddressPanel.add(new UILabel("Pays :"));
         this.agePwdAndAddressPanel.add(this.country);
-        this.agePwdAndAddressPanel.add(new UILabel("Nouveau mot de passe :"));
+        this.agePwdAndAddressPanel.add(new UILabel("Nouveau mot de passe * :"));
         this.agePwdAndAddressPanel.add(this.pwd);
 
     }
 
-    private JPanel createSubmitButtonPanel(){
-        JPanel submitButtonPanel = new JPanel();
-        submitButtonPanel.setBorder(new EmptyBorder(10, 60, 10, 60));
+    private JPanel createButtonsPanel(){
+        JPanel buttonsPanel = new JPanel();
+        buttonsPanel.setBorder(new EmptyBorder(10, 60, 10, 60));
         //submitButtonPanel.setBounds(0, 100, 100, 50);
-        submitButtonPanel.setBackground(UI_BG_COLOR);
+        buttonsPanel.setBackground(UI_BG_COLOR);
         //submitButtonPanel.setLayout(new BorderLayout());
-        this.submitButton.setText("Submit");
+
+        this.submitButton.setText("Soumettre");
         submitButton.setBackground(UI_BG_COLOR_2);
         submitButton.setForeground(UI_TEXT_COLOR);
         submitButton.setOpaque(true);
         submitButton.setBorderPainted(false);
         this.submitButton.addActionListener(new UIActionListener(this));
-        submitButtonPanel.add(this.submitButton);
-        return submitButtonPanel;
+        buttonsPanel.add(submitButton);
+
+        buttonsPanel.add(new UILabel("Tu as déjà un compte ? >>>>>"));
+
+        this.connectionButton.setText("Je me connecte !");
+        connectionButton.setBackground(UI_BG_COLOR_2);
+        connectionButton.setForeground(UI_TEXT_COLOR);
+        connectionButton.setOpaque(true);
+        connectionButton.setBorderPainted(false);
+        this.connectionButton.addActionListener(new UIActionListener(this));
+        buttonsPanel.add(this.connectionButton);
+
+        return buttonsPanel;
 
     }
     /**

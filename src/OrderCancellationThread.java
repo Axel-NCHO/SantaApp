@@ -27,6 +27,7 @@ public class OrderCancellationThread extends Thread {
         if (order != null) {
             page.getSanta().getOrdersManager().cancelOrder(order);
             JOptionPane.showMessageDialog(page, "Commande annulée.");
+            page.stopDisplayingOrder(order);
         }
     }
 }

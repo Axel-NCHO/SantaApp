@@ -17,6 +17,8 @@ public class NewChildThread extends Thread{
         NewChildHomePage newUserHomePage = new NewChildHomePage(child);
         newUserHomePage.run();
 
+        new WelcomeThread(newUserHomePage).start();
+
         // Thread for showing the number of selected toys
         new Thread(){public void run(){
             try {

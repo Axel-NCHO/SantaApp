@@ -126,6 +126,7 @@ public class ExistingChildHomePage extends UIPage {
     private void configModifyButtonPanel() {
         this.modifyButtonPanel = new JPanel();
         this.modifyButtonPanel.setBackground(UI_BG_COLOR_2);
+        this.modifyButton.addActionListener(new UIActionListener(this));
         this.modifyButtonPanel.add(this.modifyButton);
     }
 
