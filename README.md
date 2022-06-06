@@ -10,7 +10,9 @@ Ils créent un compte puis choisissent 5 jouets dans une liste de 20 jouets corr
 à leur âge.
 
 Le père noël valide ou annule les commandes en fonction de la sagesse  
-de l'enfant durant toute l'année. Cette sagesse est déterminée aléatoirement.
+de l'enfant durant toute l'année. Cette sagesse est déterminée aléatoirement.  
+
+Tant que la commande n'est pas validée, l'enfant peut la modifier.
 
 Une fois validée, la commande est préparée par les lutins préparateurs puis validée avec  
 la mention "prête à être livrée".  
@@ -41,6 +43,9 @@ Une ***JList*** a été utilisée pour la list des jouets. Il faut donc faire **
 Vous pouvez vous connecter sur le compte du Père Noël ou d'un lutin pour voir les commandes, les valider ou les annuler.
 
 >Le programme principal se trouve dans le fichier ***Main.java***.
+
+> Sur Linux, vous devez préciser le chemin absolu vers le repertoire du projet dans ***FileHelper.java***. Il s'agit de
+> l'attribut ***appPath***.
 
 >Les utilisateurs test1 et test2 sont les exemples que nous avons réalisé.
 > Pour se connecter à leur compte, utiliser le mot de passe ***hohoho!***.

@@ -9,7 +9,7 @@ import java.io.ObjectOutputStream;
  * <h1>File helper</h1>
  * File manager*/
 public class FileHelper {
-    /* Path to the working repository.
+    /** Path to the working repository.
     *  Must be modified depending on the operating system.
     *  On Windows, it's an empty string.
     *  On Linux, it's the absolute path to the working repository.*/

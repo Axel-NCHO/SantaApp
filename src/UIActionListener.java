@@ -78,9 +78,28 @@ public class UIActionListener implements ActionListener {
         /* Action performed if the calling component is on an ExistingChildHomePage */
         if (page instanceof ExistingChildHomePage) {
             // On veut pouvoir re-afficher NewChildHomePage mais contenant déjà la commande de l'enfant
-            // ExistingChildHomePage page = (ExistingChildHomePage) this.page;
             // ...
-            JOptionPane.showMessageDialog(page, "Cette fonctionnalité n'est pas encore disponible.", "Désolé !", JOptionPane.ERROR_MESSAGE);
+            ExistingChildHomePage page = (ExistingChildHomePage) this.page;
+            NewChildThread thread = new NewChildThread(page.getChild());
+            thread.start();
+
+            new CloseWindowThread(page).start();
+
+            /* Load the previous order  */
+            Order previousOrder = new Order(page.getChild().getEmail(), OrderState.ONGOING);
+            int [] indices = new int[5]; // indices of previous toys in available toys list. They will automatically be selected
+            int i=0; // iterator on indices
+            for (int index=0; index<thread.getPage().getListModel().size(); index++) {
+                if (previousOrder.getToys().contains(thread.getPage().getListModel().get(index))) {
+                    indices[i] = index;
+                    i++;
+                }
+            }
+            thread.getPage().getListOfAvailableToys().setSelectedIndices(indices);
+            thread.getPage().getMessage().setText(previousOrder.getMessage());
+
+            /* Cancel the previous order */
+            new OrdersManager(true).cancelOrder(previousOrder);
         }
 
         /* Action performed if the calling component is on a SantaHomePage */

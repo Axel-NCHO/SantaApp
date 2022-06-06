@@ -30,7 +30,7 @@ public class AccountCreationThread extends Thread {
                 JOptionPane.showMessageDialog(page, "Compte créé avec succès !");
                 this.user = packagingElf;
             } else {
-                Gentleness gentleness = chooseRandomGenttleness();
+                Gentleness gentleness = chooseRandomGentleness();
                 Child newChild = new Child(page.getFirstName().getText(), page.getLastName().getText(), mail, page.getPassword().getText(), Integer.parseInt(page.getAge().getText()), page.getAddress(), gentleness);
                 JOptionPane.showMessageDialog(page, "Compte créé avec succès !");
                 this.user = newChild;
@@ -40,7 +40,7 @@ public class AccountCreationThread extends Thread {
         }
     }
 
-    private Gentleness chooseRandomGenttleness() {
+    private Gentleness chooseRandomGentleness() {
         ArrayList<Gentleness> gentlenesses = new ArrayList<Gentleness>();
         gentlenesses.add(Gentleness.EXCELLENT_BOY);
         gentlenesses.add(Gentleness.NICE_BOY);

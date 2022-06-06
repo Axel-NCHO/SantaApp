@@ -191,6 +191,10 @@ public class NewChildHomePage extends UIPage {
         return this.listOfAvailableToys;
     }
 
+    public DefaultListModel<Toy> getListModel() {
+        return this.listModel;
+    }
+
     /**
      * @return {@link Child} owner of this page.*/
     public Child getChild() {
