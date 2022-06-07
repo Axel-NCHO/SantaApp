@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="84afeec7-9556-42db-95a6-7bc41606407a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ongoing/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Validated/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AccountCreationThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccountCreationThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrdersManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrdersManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SantaHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SantaHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UIPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WelcomeThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WelcomeThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,14 +32,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/naxel/OneDrive/Desktop/Folder/JavaEnssat/ProjetSanta"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\naxel\OneDrive\Desktop\Folder\JavaEnssat\ProjetSanta" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\naxel\OneDrive\Desktop\Folder\JavaEnssat\ProjetSanta\doc" />
       <recent name="C:\Users\naxel\OneDrive\Desktop\Folder\JavaEnssat\ProjetSanta" />

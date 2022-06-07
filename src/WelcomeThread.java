@@ -31,7 +31,7 @@ public class WelcomeThread extends Thread {
                     le nom de l'enfant :
                         ->rouge  : 0 jouets, il faut annuler la commande
                         ->jaune  : 1 seul jouet
-                        ->orange : 2 joeuts
+                        ->orange : 2 jouets
                         ->vert   : tous les jouets""";
             JOptionPane.showMessageDialog(page, tutorial, "Tutoriel", JOptionPane.INFORMATION_MESSAGE);
         }
