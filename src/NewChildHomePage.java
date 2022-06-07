@@ -112,7 +112,7 @@ public class NewChildHomePage extends UIPage {
             minAge = 16;maxAge = 18;
         }
         String toysFolder = "AppDataBase/Toys.santaDB/" + Integer.toString(minAge) + "-" + Integer.toString(maxAge);
-        String [] toysList = new File(toysFolder).list();
+        String [] toysList = FileHelper.fileList(toysFolder);
         if (toysList != null) {
             for (String toy : toysList){
                 this.listModel.addElement((Toy)FileHelper.load(toysFolder +"/" + toy));
@@ -149,7 +149,7 @@ public class NewChildHomePage extends UIPage {
         this.thirdToysRow.setBackground(UI_BG_COLOR);
         this.thirdToysRow.setLayout(new BorderLayout());
         try{
-            BufferedImage image = ImageIO.read(new File("img/gift.png"));
+            BufferedImage image = ImageIO.read(new File(FileHelper.getAppPath() + "img/gift.png"));
             UILabel imageLabel = new UILabel(new ImageIcon(image));
             this.thirdToysRow.add(imageLabel, BorderLayout.CENTER);
         }

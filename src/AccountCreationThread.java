@@ -24,7 +24,19 @@ public class AccountCreationThread extends Thread {
      * If not, show notification.*/
     public void run() {
         Email mail = new Email(page.getEmail().getText());
-        if (mail.isValidEmail() && !page.getFirstName().getText().equals("") && !page.getLastName().getText().equals("")) {
+        Boolean emailExists = true;
+        String[] users = FileHelper.fileList("AppDataBase/UsersFiles.santaDB");
+        int i = 0;
+        while(i < users.length && !users[i].equals(mail.toString())){
+            i ++;
+        }
+        if(i >= users.length) {
+            emailExists = false;
+        }
+        else{
+            JOptionPane.showMessageDialog(page, "Erreur. Email déjà utilisé, essayez avec une autre adresse mail.", "Erreur", JOptionPane.ERROR_MESSAGE);
+        }
+        if (mail.isValidEmail() && !page.getFirstName().getText().equals("") && !page.getLastName().getText().equals("") && !emailExists) {
             if (mail.toString().endsWith("@pelf.com")) {
                 PackagingElf packagingElf = new PackagingElf(page.getFirstName().getText(), page.getLastName().getText(), mail, page.getPassword().getText(), EmploymentStatus.RECRUITED);
                 JOptionPane.showMessageDialog(page, "Compte créé avec succès !");
