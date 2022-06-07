@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84afeec7-9556-42db-95a6-7bc41606407a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ready/naxelamour09@gmail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/naxelamour09@gmail.com" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConnexionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConnexionThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PackagingElfHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PackagingElfHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SantaHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SantaHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UIPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WelcomeThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WelcomeThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

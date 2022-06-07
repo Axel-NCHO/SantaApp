@@ -20,9 +20,9 @@ public class SantaHomePage extends UIPage {
     private final Santa santa;
 
     /* List models for displayed orders */
-    private DefaultListModel<Order> listModelForReceivedOrders = new DefaultListModel<Order>();
-    private DefaultListModel<Order> listModelForValidOrders = new DefaultListModel<Order>();
-    private DefaultListModel<Order> listModelForReadyOrders = new DefaultListModel<Order>();
+    private final DefaultListModel<Order> listModelForReceivedOrders = new DefaultListModel<Order>();
+    private final DefaultListModel<Order> listModelForValidOrders = new DefaultListModel<Order>();
+    private final DefaultListModel<Order> listModelForReadyOrders = new DefaultListModel<Order>();
 
     /* Page for received orders */
     private JPanel ongoingOrdersPage;
@@ -60,7 +60,7 @@ public class SantaHomePage extends UIPage {
     /* List of JCheckboxes. It contains the displayed JCheckboxes. Those represent the toys in
     * an order. This list allows to know which toys are not validated by santa so that they can
     * be removed from the order.*/
-    private ArrayList<JCheckBox> checkBoxes = new ArrayList<JCheckBox>();
+    private final ArrayList<JCheckBox> checkBoxes = new ArrayList<JCheckBox>();
 
 
     public SantaHomePage(Santa santa) {
@@ -126,20 +126,20 @@ public class SantaHomePage extends UIPage {
         this.ongoingOrdersPage = new JPanel();
         this.ongoingOrdersPage.setBackground(UI_BG_COLOR);
         this.ongoingOrdersPage.setLayout(new GridLayout(1, 2));
-        this.ongoingOrdersPage.add(createListPanel("Commandes Reçues", santa.getOrdersManager().getReceivedOrders(), listModelForReceivedOrders));
+        this.ongoingOrdersPage.add(createListPanel("Commandes Reçues", santa.getOrdersManager().getReceivedOrders(), listModelForReceivedOrders, true));
         this.ongoingOrdersPage.add(createContentPanel(santa.getOrdersManager().getReceivedOrders()));
 
         // validated
         this.validatedOrdersPage = new JPanel();
         this.validatedOrdersPage.setBackground(UI_BG_COLOR);
         this.validatedOrdersPage.setLayout(new BorderLayout());
-        this.validatedOrdersPage.add(createListPanel("Commandes validées", santa.getOrdersManager().getValidOrders(), listModelForValidOrders));
+        this.validatedOrdersPage.add(createListPanel("Commandes validées", santa.getOrdersManager().getValidOrders(), listModelForValidOrders, false));
 
         // ready
         this.readyOrdersPage = new JPanel();
         this.readyOrdersPage.setBackground(UI_BG_COLOR);
         this.readyOrdersPage.setLayout(new BorderLayout());
-        this.readyOrdersPage.add(createListPanel("Commandes prêtes", santa.getOrdersManager().getPreparedOrders(), listModelForReadyOrders));
+        this.readyOrdersPage.add(createListPanel("Commandes prêtes", santa.getOrdersManager().getPreparedOrders(), listModelForReadyOrders, false));
     }
 
     /**
@@ -147,7 +147,7 @@ public class SantaHomePage extends UIPage {
      * @param title displayed title at top in the panel.
      * @param managersList the list to be displayed.
      * @param plistModel {@link DefaultListModel}.*/
-    private JPanel createListPanel(String title, ArrayList<Order> managersList, DefaultListModel<Order> plistModel) {
+    private JPanel createListPanel(String title, ArrayList<Order> managersList, DefaultListModel<Order> plistModel, boolean needsActions) {
         JPanel listPanel = new JPanel();
         listPanel.setBackground(UI_BG_COLOR_2);
         listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS));
@@ -168,21 +168,23 @@ public class SantaHomePage extends UIPage {
         scrollPane.setViewportView(list);
         listPanel.add(scrollPane);
 
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setBackground(UI_BG_COLOR_2);
-        JButton previous = new JButton("Précédent");
-        previous.addActionListener(new UIActionListener(this));
-        JButton validateButton = new JButton("Valider");
-        validateButton.addActionListener(new UIActionListener(this));
-        JButton cancelButton = new JButton("Annuler la commande");
-        cancelButton.addActionListener(new UIActionListener(this));
-        JButton next = new JButton("Suivant");
-        next.addActionListener(new UIActionListener(this));
-        buttonPanel.add(previous);
-        buttonPanel.add(validateButton);
-        buttonPanel.add(cancelButton);
-        buttonPanel.add(next);
-        listPanel.add(buttonPanel);
+        if (needsActions) {
+            JPanel buttonPanel = new JPanel();
+            buttonPanel.setBackground(UI_BG_COLOR_2);
+            JButton previous = new JButton("Précédent");
+            previous.addActionListener(new UIActionListener(this));
+            JButton validateButton = new JButton("Valider");
+            validateButton.addActionListener(new UIActionListener(this));
+            JButton cancelButton = new JButton("Annuler la commande");
+            cancelButton.addActionListener(new UIActionListener(this));
+            JButton next = new JButton("Suivant");
+            next.addActionListener(new UIActionListener(this));
+            buttonPanel.add(previous);
+            buttonPanel.add(validateButton);
+            buttonPanel.add(cancelButton);
+            buttonPanel.add(next);
+            listPanel.add(buttonPanel);
+        }
 
         return listPanel;
     }
@@ -195,7 +197,6 @@ public class SantaHomePage extends UIPage {
         for (Order order : managersList) {
             contentPanel.add(order.getOwner().getEmail().toString(), create_InContentPanel(order));
         }
-        //new ShowOrderContentThread(this).start();
 
         return contentPanel;
     }
@@ -211,7 +212,9 @@ public class SantaHomePage extends UIPage {
 
         JPanel personalInfosPanel = new JPanel();
         personalInfosPanel.setBackground(UI_BG_COLOR);
-        personalInfosPanel.add(new UILabel(order.getOwner().toString()));
+        UILabel childsInfos = new UILabel(order.getOwner().toString());
+        setColor(order.getOwner(), childsInfos); // color depends on gentleness
+        personalInfosPanel.add(childsInfos);
         _inContentPanel.add(personalInfosPanel);
 
         JPanel whishListPanel = new JPanel();
@@ -235,29 +238,24 @@ public class SantaHomePage extends UIPage {
         messagePanel.add(message);
         _inContentPanel.add(messagePanel);
 
-        /*JPanel buttonPanel = new JPanel();
-        buttonPanel.setBackground(UI_BG_COLOR);
-        JButton previous = new JButton("Précédent");
-        previous.addActionListener(new UIActionListener(this));
-        JButton validateButton = new JButton("Valider");
-        validateButton.addActionListener(new UIActionListener(this));
-        JButton cancelButton = new JButton("Annuler la commande");
-        cancelButton.addActionListener(new UIActionListener(this));
-        JButton next = new JButton("Suivant");
-        next.addActionListener(new UIActionListener(this));
-        buttonPanel.add(previous);
-        buttonPanel.add(validateButton);
-        buttonPanel.add(cancelButton);
-        buttonPanel.add(next);
-        _inContentPanel.add(buttonPanel);*/
-
         return _inContentPanel;
     }
 
+    private void setColor(Child child, UILabel label) {
+        switch(child.getGentleness()) {
+            case BAD_BOY -> label.setForeground(Color.RED);
+            case NICE_BOY -> label.setForeground(Color.YELLOW);
+            case GOOD_BOY -> label.setForeground(Color.ORANGE);
+            case EXCELLENT_BOY -> label.setForeground(Color.GREEN);
+        }
+    }
+
     private void configElfPages() {
+        //packaging elf
         this.packagingElfPage = new JPanel();
         this.packagingElfPage.setBackground(Color.ORANGE);
 
+        //med elf
         this.medElfPage = new JPanel();
         this.medElfPage.setBackground(Color.BLUE);
     }

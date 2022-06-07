@@ -37,6 +37,7 @@ public class ConnexionThread extends Thread {
                         public void run() {
                             SantaHomePage santaHomePage = new SantaHomePage(santa);
                             santaHomePage.run();
+                            new WelcomeThread(santaHomePage).start();
                         }
                     }.start();
                     new CloseWindowThread(page).start();

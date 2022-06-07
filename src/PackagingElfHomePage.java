@@ -68,7 +68,7 @@ public class PackagingElfHomePage extends UIPage {
         listPanel.add(scrollPane);
 
         JPanel buttonPanel = new JPanel();
-        buttonPanel.setBackground(UI_BG_COLOR);
+        buttonPanel.setBackground(UI_BG_COLOR_2);
         buttonPanel.setBorder(new EmptyBorder(50, 0, 0, 0));
         JButton previous = new JButton("Précédent");
         previous.addActionListener(new UIActionListener(this));
