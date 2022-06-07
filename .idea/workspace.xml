@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84afeec7-9556-42db-95a6-7bc41606407a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ongoing/nax@mail.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/nax@mail.com" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
