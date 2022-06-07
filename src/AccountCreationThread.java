@@ -24,7 +24,7 @@ public class AccountCreationThread extends Thread {
      * If not, show notification.*/
     public void run() {
         Email mail = new Email(page.getEmail().getText());
-        Boolean emailExists = true;
+        boolean emailExists = true;
         String[] users = FileHelper.fileList("AppDataBase/UsersFiles.santaDB");
         int i = 0;
         while(i < users.length && !users[i].equals(mail.toString())){

@@ -37,15 +37,21 @@ public class OrdersManager {
             String[] Ongoing = new File(FileHelper.getAppPath() +  orderPath + "Ongoing/").list();
             String[] Validated = new File(FileHelper.getAppPath() +  orderPath + "Validated/").list();
             String[] Ready = new File(FileHelper.getAppPath() +  orderPath + "Ready/").list();
-            for(int i = 0; i < Ongoing.length; i++){
-                Order tmp = (Order) FileHelper.load(orderPath + "Ongoing/" + Ongoing[i]);
-                receivedOrders.add(tmp);
+            if (Ongoing != null) {
+                for (int i = 0; i < Ongoing.length; i++) {
+                    Order tmp = (Order) FileHelper.load(orderPath + "Ongoing/" + Ongoing[i]);
+                    receivedOrders.add(tmp);
+                }
             }
-            for(int i = 0; i < Validated.length; i++){
-                validOrders.add((Order) FileHelper.load(orderPath + "Validated/" + Validated[i]));
+            if (Validated != null) {
+                for (int i = 0; i < Validated.length; i++) {
+                    validOrders.add((Order) FileHelper.load(orderPath + "Validated/" + Validated[i]));
+                }
             }
-            for(int i = 0; i < Ready.length; i++){
-                preparedOrders.add((Order) FileHelper.load(orderPath + "Ready/" + Ready[i]));
+            if (Ready != null) {
+                for (int i = 0; i < Ready.length; i++) {
+                    preparedOrders.add((Order) FileHelper.load(orderPath + "Ready/" + Ready[i]));
+                }
             }
         }
     }

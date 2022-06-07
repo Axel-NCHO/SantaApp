@@ -243,10 +243,18 @@ public class SantaHomePage extends UIPage {
 
     private void setColor(Child child, UILabel label) {
         switch(child.getGentleness()) {
-            case BAD_BOY -> label.setForeground(Color.RED);
-            case NICE_BOY -> label.setForeground(Color.YELLOW);
-            case GOOD_BOY -> label.setForeground(Color.ORANGE);
-            case EXCELLENT_BOY -> label.setForeground(Color.GREEN);
+            case BAD_BOY :
+                label.setForeground(Color.RED);
+                break;
+            case NICE_BOY :
+                label.setForeground(Color.YELLOW);
+                break;
+            case GOOD_BOY :
+                label.setForeground(Color.ORANGE);
+                break;
+            case EXCELLENT_BOY :
+                label.setForeground(Color.GREEN);
+                break;
         }
     }
 

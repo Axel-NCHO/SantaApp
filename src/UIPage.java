@@ -15,7 +15,7 @@ public abstract class UIPage extends JFrame implements UiFinals, KeyListener {
     public UIPage (String title){
         BufferedImage image;
         try {
-            image = ImageIO.read(new File(FileHelper.getAppPath() + "/img/bells.png"));
+            image = ImageIO.read(new File(FileHelper.getAppPath() + "img/bells.png"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
