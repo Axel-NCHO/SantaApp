@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84afeec7-9556-42db-95a6-7bc41606407a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AppDataBase/Orders.santaDB/Ongoing/test00@mail.co" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppDataBase/UsersFiles.santaDB/test00@mail.co" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ExistingChildHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExistingChildHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewChildHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewChildHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewChildThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewChildThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UIActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIActionListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
